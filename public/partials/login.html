@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+        <div class="login-panel panel panel-default">
+            <div class="panel-body">
+                <div  id="loginPanel">
+                    <section id="localLoginPanel">
+                        <h2>Log in</h2>
+                        <form action="/Account/JsonLogin" id="loginForm" method="post">
+                            <input name="__RequestVerificationToken" type="hidden" value="BnqQdDoclBXlv0whk4b8t9AiFq2nIWbcT2TFr8jbgyoirBN1HADR_PvHiMer7wKcxWZqg4Ji_OCZr1TjxzZ8kNHxL78YdahKh0zJyjVKkvkGjC5toMJLb-nRV8LJQ3Nyiw3ADfRkLaucGh5ChNdaFgxA4W7bzTy4wQPbHfKoUdM1" />    <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Username" data-val-required="The Password field is required." name="Password" id="Password" type="text" value="">
+                                <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Access Code" data-val-required="The User name field is required." name="UserName" id="loginName" type="password" autofocus="">
+                                <span class="field-validation-valid" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
+                            </div>
+                            <input name="RememberMe" type="hidden" value="false">
+                            <input type="submit" value="Login" class="btn btn-primary" />
+                            <div class="validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
+                            </ul></div>
+                        </fieldset>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.col-->
+</div><!-- /.row -->

@@ -1,0 +1,174 @@
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-08T17:04:33.737Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:04:33.753Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"*701#","requestType":"Initiation","serviceCode":"*701#","isFirstDial":true,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-08T17:04:33.753Z"}
+{"level":"info","message":"Processing first dial ","timestamp":"2016-07-08T17:04:33.788Z"}
+{"level":"info","message":"getTopMenuItemsByAppId Menu items count  5","timestamp":"2016-07-08T17:04:33.797Z"}
+{"id":95,"sessionId":"s123","startTime":"2016-07-08T17:04:33.753Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"*701#","requestType":"Initiation","expired":false,"returnValue":"0","appId":"ussdbank","updatedAt":"2016-07-08T17:04:33.000Z","createdAt":"2016-07-08T17:04:33.000Z","level":"info","message":"Created ussd session ","timestamp":"2016-07-08T17:04:33.829Z"}
+{"level":"info","message":"building display Menu Items  5","timestamp":"2016-07-08T17:04:33.830Z"}
+{"0":"1. Item 1-level1","1":"2. item2-leve2-1","2":"3. Item 3 - level 1","3":"4. Item4-level1","4":"5. item5- level 1","level":"info","message":"Result from buildDisplayMenu >>> ","timestamp":"2016-07-08T17:04:33.831Z"}
+{"sessionData":{"sessionId":"s123","startTime":"2016-07-08T17:04:33.753Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"*701#","requestType":"Initiation","serviceCode":"*701#","isFirstDial":true,"expired":false,"returnValue":"0","appId":"ussdbank"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["1. Item 1-level1","2. item2-leve2-1","3. Item 3 - level 1","4. Item4-level1","5. item5- level 1"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"First Dial final callback response >>>> ","timestamp":"2016-07-08T17:04:33.831Z"}
+{"sessionData":{"sessionId":"s123","startTime":"2016-07-08T17:04:33.753Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"*701#","requestType":"Initiation","serviceCode":"*701#","isFirstDial":true,"expired":false,"returnValue":"0","appId":"ussdbank"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["1. Item 1-level1","2. item2-leve2-1","3. Item 3 - level 1","4. Item4-level1","5. item5- level 1"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"First dial processed response >>>> ","timestamp":"2016-07-08T17:04:33.832Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-08T17:04:33.832Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-08T17:04:33.833Z"}
+{"sessionData":{"sessionId":"s123","startTime":"2016-07-08T17:04:33.753Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"*701#","requestType":"Initiation","serviceCode":"*701#","isFirstDial":true,"expired":false,"returnValue":"0","appId":"ussdbank"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["1. Item 1-level1","2. item2-leve2-1","3. Item 3 - level 1","4. Item4-level1","5. item5- level 1"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-08T17:04:33.833Z"}
+{"Type":"Response","Message":"1. Item 1-level1\r\n2. item2-leve2-1\r\n3. Item 3 - level 1\r\n4. Item4-level1\r\n5. item5- level 1","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-08T17:04:33.833Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-08T17:04:39.759Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:04:39.760Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"1","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-08T17:04:39.760Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-08T17:04:39.760Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:04:39.760Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"1","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-08T17:04:39.760Z"}
+{"level":"info","message":"getPreviousSessionInput count >>  2","timestamp":"2016-07-08T17:04:39.808Z"}
+{"id":2,"appId":"ussdbank","uniqueId":"07a078c5-6283-97f6-680c-066c688e3a20","parentFlowId":"0","flowId":"0-1","position":null,"displayText":"Item 1-level1","actionName":null,"returnValue":"1","inputHolder":"item1level1","actionId":null,"terminateOnActionFail":null,"forceTerminate":null,"actionType":null,"terminate":null,"createdAt":"2016-07-04T18:51:09.000Z","updatedAt":"2016-07-04T18:51:09.000Z","level":"info","message":"MenuItem found for getMenuItemByFlowId >>>","timestamp":"2016-07-08T17:04:39.812Z"}
+{"level":"info","message":"Result from buildFlowFromSession >>>  0-1","timestamp":"2016-07-08T17:04:39.813Z"}
+{"level":"info","message":"child menu list count >>>  1","timestamp":"2016-07-08T17:04:39.828Z"}
+{"level":"info","message":"Sending successful final response from engine >>> ","timestamp":"2016-07-08T17:04:39.829Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-08T17:04:39.829Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-08T17:04:39.830Z"}
+{"sessionData":{"sessionId":"s123","startTime":"2016-07-08T17:04:39.760Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"1","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"returnValue":"1","appId":"ussdbank"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["2. item1 - level 2"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-08T17:04:39.830Z"}
+{"Type":"Response","Message":"2. item1 - level 2","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-08T17:04:39.830Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-08T17:04:45.921Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:04:45.921Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"5","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-08T17:04:45.921Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-08T17:04:45.922Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:04:45.921Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"5","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-08T17:04:45.922Z"}
+{"level":"info","message":"getPreviousSessionInput count >>  3","timestamp":"2016-07-08T17:04:45.951Z"}
+{"level":"info","message":"No matching menuItem found processing as non-list input >>>","timestamp":"2016-07-08T17:04:45.960Z"}
+{"level":"info","message":"processItemAsNonListInput Number sessions returned >>>  3","timestamp":"2016-07-08T17:04:45.960Z"}
+{"level":"info","message":"Assigning previous session >> ","timestamp":"2016-07-08T17:04:46.013Z"}
+{"id":96,"appId":"ussdbank","sessionId":"s123","startTime":"2016-07-08T17:04:39.760Z","actionId":null,"terminate":null,"mobile":"233256583910","network":"07/07/2016","sequence":1,"flowId":"0-1","input":"1","inputHolder":"item1level1","returnValue":"1","requestType":"Response","expired":false,"createdAt":"2016-07-08T17:04:39.000Z","updatedAt":"2016-07-08T17:04:39.000Z","level":"info","message":"Previous session assigned as >> ","timestamp":"2016-07-08T17:04:46.013Z"}
+{"level":"info","message":"Finding findChildMenusByFlowId >>> ","timestamp":"2016-07-08T17:04:46.014Z"}
+{"level":"info","message":"Child items found in processItemAsNonListInput >>> 1","timestamp":"2016-07-08T17:04:46.014Z"}
+{"level":"info","message":"Request processed as non-list input >>>  1","timestamp":"2016-07-08T17:04:46.015Z"}
+{"level":"info","message":"Sending successful final response from engine >>> ","timestamp":"2016-07-08T17:04:46.018Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-08T17:04:46.019Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-08T17:04:46.020Z"}
+{"sessionData":{"sessionId":"s123","startTime":"2016-07-08T17:04:45.921Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"5","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"returnValue":"5","appId":"ussdbank"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["2. item1 - level 2"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-08T17:04:46.021Z"}
+{"Type":"Response","Message":"2. item1 - level 2","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-08T17:04:46.021Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-08T17:04:33.756Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:04:33.753Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"*701#","requestType":"Initiation","serviceCode":"*701#","isFirstDial":true,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-08T17:04:33.757Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-08T17:05:18.435Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:05:18.435Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"6","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-08T17:05:18.435Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-08T17:05:18.436Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:05:18.435Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"6","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-08T17:05:18.436Z"}
+{"level":"info","message":"getPreviousSessionInput count >>  4","timestamp":"2016-07-08T17:05:18.515Z"}
+{"level":"info","message":"No matching menuItem found processing as non-list input >>>","timestamp":"2016-07-08T17:05:18.549Z"}
+{"level":"info","message":"processItemAsNonListInput Number sessions returned >>>  4","timestamp":"2016-07-08T17:05:18.549Z"}
+{"level":"info","message":"Assigning previous session >> ","timestamp":"2016-07-08T17:05:18.555Z"}
+{"id":97,"appId":"ussdbank","sessionId":"s123","startTime":"2016-07-08T17:04:45.921Z","actionId":null,"terminate":null,"mobile":"233256583910","network":"07/07/2016","sequence":1,"flowId":"0-1-2","input":"5","inputHolder":"item1level2","returnValue":"2","requestType":"Response","expired":false,"createdAt":"2016-07-08T17:04:45.000Z","updatedAt":"2016-07-08T17:04:46.000Z","level":"info","message":"Previous session assigned as >> ","timestamp":"2016-07-08T17:05:18.555Z"}
+{"level":"info","message":"Finding findChildMenusByFlowId >>> ","timestamp":"2016-07-08T17:05:18.556Z"}
+{"level":"info","message":"Child items found in processItemAsNonListInput >>> 1","timestamp":"2016-07-08T17:05:18.556Z"}
+{"level":"info","message":"Request processed as non-list input >>>  1","timestamp":"2016-07-08T17:05:18.556Z"}
+{"level":"info","message":"Sending successful final response from engine >>> ","timestamp":"2016-07-08T17:05:18.558Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-08T17:05:18.559Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-08T17:05:18.559Z"}
+{"sessionData":{"sessionId":"s123","startTime":"2016-07-08T17:05:18.435Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"6","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"returnValue":"6","appId":"ussdbank"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["3. item1-level 3"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-08T17:05:18.560Z"}
+{"Type":"Response","Message":"3. item1-level 3","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-08T17:05:18.560Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-08T17:06:42.889Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:06:42.890Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"7","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-08T17:06:42.890Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-08T17:06:42.891Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:06:42.890Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"7","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-08T17:06:42.891Z"}
+{"level":"info","message":"getPreviousSessionInput count >>  5","timestamp":"2016-07-08T17:06:42.988Z"}
+{"level":"info","message":"No matching menuItem found processing as non-list input >>>","timestamp":"2016-07-08T17:06:42.991Z"}
+{"level":"info","message":"processItemAsNonListInput Number sessions returned >>>  5","timestamp":"2016-07-08T17:06:42.992Z"}
+{"level":"info","message":"Assigning previous session >> ","timestamp":"2016-07-08T17:06:43.005Z"}
+{"id":98,"appId":"ussdbank","sessionId":"s123","startTime":"2016-07-08T17:05:18.435Z","actionId":null,"terminate":null,"mobile":"233256583910","network":"07/07/2016","sequence":1,"flowId":"0-1-2-3","input":"6","inputHolder":"item1level3","returnValue":"3","requestType":"Response","expired":false,"createdAt":"2016-07-08T17:05:18.000Z","updatedAt":"2016-07-08T17:05:18.000Z","level":"info","message":"Previous session assigned as >> ","timestamp":"2016-07-08T17:06:43.005Z"}
+{"level":"info","message":"Finding findChildMenusByFlowId >>> ","timestamp":"2016-07-08T17:06:43.006Z"}
+{"level":"info","message":"Child items found in processItemAsNonListInput >>> 1","timestamp":"2016-07-08T17:06:43.006Z"}
+{"level":"info","message":"Request processed as non-list input >>>  1","timestamp":"2016-07-08T17:06:43.007Z"}
+{"level":"info","message":"Sending successful final response from engine >>> ","timestamp":"2016-07-08T17:06:43.010Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-08T17:06:43.010Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-08T17:06:43.011Z"}
+{"sessionData":{"sessionId":"s123","startTime":"2016-07-08T17:06:42.890Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"7","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"returnValue":"7","appId":"ussdbank"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["4. Item1-level4"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-08T17:06:43.011Z"}
+{"Type":"Response","Message":"4. Item1-level4","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-08T17:06:43.011Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-08T17:26:58.786Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:26:58.787Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"*701#","requestType":"Initiation","serviceCode":"*701#","isFirstDial":true,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-08T17:26:58.787Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-08T17:26:58.788Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:26:58.787Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"*701#","requestType":"Initiation","serviceCode":"*701#","isFirstDial":true,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-08T17:26:58.788Z"}
+{"level":"info","message":"Processing first dial ","timestamp":"2016-07-08T17:26:58.808Z"}
+{"level":"info","message":"getTopMenuItemsByAppId Menu items count  4","timestamp":"2016-07-08T17:26:58.813Z"}
+{"id":100,"sessionId":"s123","startTime":"2016-07-08T17:26:58.787Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"*701#","requestType":"Initiation","expired":false,"returnValue":"0","appId":"ussdbank","updatedAt":"2016-07-08T17:26:58.000Z","createdAt":"2016-07-08T17:26:58.000Z","level":"info","message":"Created ussd session ","timestamp":"2016-07-08T17:26:58.867Z"}
+{"level":"info","message":"building display Menu Items  4","timestamp":"2016-07-08T17:26:58.868Z"}
+{"0":"1. Item 1-level1","1":"2. item2-leve2-1","2":"4. Item4-level1","3":"5. item5- level 1","level":"info","message":"Result from buildDisplayMenu >>> ","timestamp":"2016-07-08T17:26:58.868Z"}
+{"sessionData":{"sessionId":"s123","startTime":"2016-07-08T17:26:58.787Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"*701#","requestType":"Initiation","serviceCode":"*701#","isFirstDial":true,"expired":false,"returnValue":"0","appId":"ussdbank"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["1. Item 1-level1","2. item2-leve2-1","4. Item4-level1","5. item5- level 1"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"First Dial final callback response >>>> ","timestamp":"2016-07-08T17:26:58.868Z"}
+{"sessionData":{"sessionId":"s123","startTime":"2016-07-08T17:26:58.787Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"*701#","requestType":"Initiation","serviceCode":"*701#","isFirstDial":true,"expired":false,"returnValue":"0","appId":"ussdbank"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["1. Item 1-level1","2. item2-leve2-1","4. Item4-level1","5. item5- level 1"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"First dial processed response >>>> ","timestamp":"2016-07-08T17:26:58.869Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-08T17:26:58.869Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-08T17:26:58.869Z"}
+{"sessionData":{"sessionId":"s123","startTime":"2016-07-08T17:26:58.787Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"*701#","requestType":"Initiation","serviceCode":"*701#","isFirstDial":true,"expired":false,"returnValue":"0","appId":"ussdbank"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["1. Item 1-level1","2. item2-leve2-1","4. Item4-level1","5. item5- level 1"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-08T17:26:58.869Z"}
+{"Type":"Response","Message":"1. Item 1-level1\r\n2. item2-leve2-1\r\n4. Item4-level1\r\n5. item5- level 1","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-08T17:26:58.869Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-08T17:27:23.905Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:27:23.906Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"1","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-08T17:27:23.906Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-08T17:27:23.906Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:27:23.906Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"1","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-08T17:27:23.906Z"}
+{"level":"info","message":"getPreviousSessionInput count >>  2","timestamp":"2016-07-08T17:27:23.990Z"}
+{"id":2,"appId":"ussdbank","uniqueId":"07a078c5-6283-97f6-680c-066c688e3a20","parentFlowId":"0","flowId":"0-1","position":null,"displayText":"Item 1-level1","actionName":null,"returnValue":"1","inputHolder":"item1level1","actionId":null,"terminateOnActionFail":null,"forceTerminate":null,"actionType":null,"terminate":null,"createdAt":"2016-07-04T18:51:09.000Z","updatedAt":"2016-07-04T18:51:09.000Z","level":"info","message":"MenuItem found for getMenuItemByFlowId >>>","timestamp":"2016-07-08T17:27:23.997Z"}
+{"level":"info","message":"Result from buildFlowFromSession >>>  0-1","timestamp":"2016-07-08T17:27:23.997Z"}
+{"level":"info","message":"child menu list count >>>  1","timestamp":"2016-07-08T17:27:24.009Z"}
+{"level":"info","message":"Sending successful final response from engine >>> ","timestamp":"2016-07-08T17:27:24.009Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-08T17:27:24.009Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-08T17:27:24.009Z"}
+{"sessionData":{"sessionId":"s123","startTime":"2016-07-08T17:27:23.906Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"1","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"returnValue":"1","appId":"ussdbank"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["2. item1 - level 2"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-08T17:27:24.009Z"}
+{"Type":"Response","Message":"2. item1 - level 2","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-08T17:27:24.011Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-08T17:27:32.999Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:27:33.000Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"7","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-08T17:27:33.000Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-08T17:27:33.000Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:27:33.000Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"7","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-08T17:27:33.000Z"}
+{"level":"info","message":"getPreviousSessionInput count >>  3","timestamp":"2016-07-08T17:27:33.075Z"}
+{"level":"info","message":"No matching menuItem found processing as non-list input >>>","timestamp":"2016-07-08T17:27:33.091Z"}
+{"level":"info","message":"processItemAsNonListInput Number sessions returned >>>  3","timestamp":"2016-07-08T17:27:33.091Z"}
+{"level":"info","message":"Assigning previous session >> ","timestamp":"2016-07-08T17:27:33.096Z"}
+{"id":101,"appId":"ussdbank","sessionId":"s123","startTime":"2016-07-08T17:27:23.906Z","actionId":null,"terminate":null,"mobile":"233256583910","network":"07/07/2016","sequence":1,"flowId":"0-1","input":"1","inputHolder":"item1level1","returnValue":"1","requestType":"Response","expired":false,"createdAt":"2016-07-08T17:27:23.000Z","updatedAt":"2016-07-08T17:27:23.000Z","level":"info","message":"Previous session assigned as >> ","timestamp":"2016-07-08T17:27:33.096Z"}
+{"level":"info","message":"Finding findChildMenusByFlowId >>> ","timestamp":"2016-07-08T17:27:33.096Z"}
+{"level":"info","message":"Child items found in processItemAsNonListInput >>> 1","timestamp":"2016-07-08T17:27:33.096Z"}
+{"level":"info","message":"Request processed as non-list input >>>  1","timestamp":"2016-07-08T17:27:33.097Z"}
+{"level":"info","message":"Sending successful final response from engine >>> ","timestamp":"2016-07-08T17:27:33.099Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-08T17:27:33.099Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-08T17:27:33.100Z"}
+{"sessionData":{"sessionId":"s123","startTime":"2016-07-08T17:27:33.000Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"7","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"returnValue":"7","appId":"ussdbank"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["2. item1 - level 2"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-08T17:27:33.100Z"}
+{"Type":"Response","Message":"2. item1 - level 2","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-08T17:27:33.101Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-08T17:27:41.792Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:27:41.793Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"9","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-08T17:27:41.793Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-08T17:27:41.794Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:27:41.793Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"9","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-08T17:27:41.794Z"}
+{"level":"info","message":"getPreviousSessionInput count >>  4","timestamp":"2016-07-08T17:27:41.822Z"}
+{"level":"info","message":"No matching menuItem found processing as non-list input >>>","timestamp":"2016-07-08T17:27:41.827Z"}
+{"level":"info","message":"processItemAsNonListInput Number sessions returned >>>  4","timestamp":"2016-07-08T17:27:41.827Z"}
+{"level":"info","message":"Assigning previous session >> ","timestamp":"2016-07-08T17:27:41.834Z"}
+{"id":102,"appId":"ussdbank","sessionId":"s123","startTime":"2016-07-08T17:27:33.000Z","actionId":null,"terminate":null,"mobile":"233256583910","network":"07/07/2016","sequence":1,"flowId":"0-1-2","input":"7","inputHolder":"item1level2","returnValue":"2","requestType":"Response","expired":false,"createdAt":"2016-07-08T17:27:33.000Z","updatedAt":"2016-07-08T17:27:33.000Z","level":"info","message":"Previous session assigned as >> ","timestamp":"2016-07-08T17:27:41.834Z"}
+{"level":"info","message":"Finding findChildMenusByFlowId >>> ","timestamp":"2016-07-08T17:27:41.835Z"}
+{"level":"info","message":"Child items found in processItemAsNonListInput >>> 1","timestamp":"2016-07-08T17:27:41.835Z"}
+{"level":"info","message":"Request processed as non-list input >>>  1","timestamp":"2016-07-08T17:27:41.837Z"}
+{"level":"info","message":"Sending successful final response from engine >>> ","timestamp":"2016-07-08T17:27:41.840Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-08T17:27:41.840Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-08T17:27:41.840Z"}
+{"sessionData":{"sessionId":"s123","startTime":"2016-07-08T17:27:41.793Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"9","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"returnValue":"9","appId":"ussdbank"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["3. item1-level 3"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-08T17:27:41.840Z"}
+{"Type":"Response","Message":"3. item1-level 3","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-08T17:27:41.841Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-08T17:27:54.620Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:27:54.621Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"78","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-08T17:27:54.621Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-08T17:27:54.621Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:27:54.621Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"78","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-08T17:27:54.621Z"}
+{"level":"info","message":"getPreviousSessionInput count >>  5","timestamp":"2016-07-08T17:27:54.677Z"}
+{"level":"info","message":"processItemAsNonListInput Number sessions returned >>>  5","timestamp":"2016-07-08T17:27:54.678Z"}
+{"level":"info","message":"Assigning previous session >> ","timestamp":"2016-07-08T17:27:54.685Z"}
+{"id":103,"appId":"ussdbank","sessionId":"s123","startTime":"2016-07-08T17:27:41.793Z","actionId":null,"terminate":null,"mobile":"233256583910","network":"07/07/2016","sequence":1,"flowId":"0-1-2-3","input":"9","inputHolder":"item1level3","returnValue":"3","requestType":"Response","expired":false,"createdAt":"2016-07-08T17:27:41.000Z","updatedAt":"2016-07-08T17:27:41.000Z","level":"info","message":"Previous session assigned as >> ","timestamp":"2016-07-08T17:27:54.685Z"}
+{"level":"info","message":"Finding findChildMenusByFlowId >>> ","timestamp":"2016-07-08T17:27:54.686Z"}
+{"level":"info","message":"Child items found in processItemAsNonListInput >>> 1","timestamp":"2016-07-08T17:27:54.686Z"}
+{"level":"info","message":"Request processed as non-list input >>>  1","timestamp":"2016-07-08T17:27:54.686Z"}
+{"level":"info","message":"Sending successful final response from engine >>> ","timestamp":"2016-07-08T17:27:54.692Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-08T17:27:54.693Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-08T17:27:54.693Z"}
+{"sessionData":{"sessionId":"s123","startTime":"2016-07-08T17:27:54.621Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"78","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"returnValue":"78","appId":"ussdbank"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["4. Item1-level4"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-08T17:27:54.694Z"}
+{"Type":"Response","Message":"4. Item1-level4","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-08T17:27:54.695Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-08T17:28:06.000Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:28:06.000Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"89","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-08T17:28:06.000Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-08T17:28:06.001Z"}
+{"sessionId":"s123","startTime":"2016-07-08T17:28:06.000Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"89","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-08T17:28:06.001Z"}
+{"level":"info","message":"getPreviousSessionInput count >>  6","timestamp":"2016-07-08T17:28:06.066Z"}
+{"level":"info","message":"processItemAsNonListInput Number sessions returned >>>  6","timestamp":"2016-07-08T17:28:06.067Z"}
+{"level":"info","message":"Assigning previous session >> ","timestamp":"2016-07-08T17:28:06.071Z"}
+{"id":104,"appId":"ussdbank","sessionId":"s123","startTime":"2016-07-08T17:27:54.621Z","actionId":null,"terminate":null,"mobile":"233256583910","network":"07/07/2016","sequence":1,"flowId":"0-1-2-3-4","input":"78","inputHolder":"item1level4","returnValue":"4","requestType":"Response","expired":false,"createdAt":"2016-07-08T17:27:54.000Z","updatedAt":"2016-07-08T17:27:54.000Z","level":"info","message":"Previous session assigned as >> ","timestamp":"2016-07-08T17:28:06.071Z"}
+{"level":"info","message":"Finding findChildMenusByFlowId >>> ","timestamp":"2016-07-08T17:28:06.072Z"}
+{"level":"info","message":"Child items found in processItemAsNonListInput >>> 2","timestamp":"2016-07-08T17:28:06.073Z"}
+{"level":"info","message":"processItemAsNonListInput Child items found are out of range >>> Invalid input value. Please try again","timestamp":"2016-07-08T17:28:06.073Z"}
+{"level":"info","message":"Request processed as non-list input >>>  0","timestamp":"2016-07-08T17:28:06.073Z"}
+{"level":"info","message":"Invalid menu Item selected  >>> ","timestamp":"2016-07-08T17:28:06.073Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-08T17:28:06.076Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-08T17:28:06.081Z"}
+{"sessionData":{"sessionId":"s123","startTime":"2016-07-08T17:27:54.621Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"78","requestType":"Response","serviceCode":"*701#","isFirstDial":false,"expired":false,"returnValue":"78","appId":"ussdbank"},"appData":{},"error":true,"errorMessage":"Invalid option selected","response":{"headerText":null,"displayMenu":["4. Item1-level4"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-08T17:28:06.081Z"}
+{"Type":"Release","Message":"Invalid option selected","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-08T17:28:06.082Z"}

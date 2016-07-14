@@ -1,0 +1,21 @@
+{
+
+  "test":{
+    "username": "sa",
+    "password": "p@$$word",
+    "database": "UssdDb",
+    "host": "127.0.0.1",
+    "dialect": "mssql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+
+  "logins" :[
+        {"username":"admin","password":"password1"}
+  ]
+}

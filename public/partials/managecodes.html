@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+    <tr>
+        <td>App ID</td>
+        <td>Description</td>
+        <td>Short Code</td>
+        <td></td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr data-ng-repeat="a in vm.ussdapps">
+        <td data-ng-bind="a.appId"></td>
+        <td data-ng-bind="a.description"></td>
+        <td data-ng-bind="a.shortCode"></td>
+        <td>
+            <a href="#/manageflow/{{a.appId}}" class="btn btn-xs btn-primary">Manage Flow </a>
+        </td>
+        <td>
+            <button data-ng-click="vm.deleteApp(a.appId)" class="btn btn-xs btn-danger">Delete App</button>
+        </td>
+    </tr>
+    </tbody>
+</table>

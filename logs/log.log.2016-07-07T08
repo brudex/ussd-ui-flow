@@ -1,0 +1,2 @@
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-07T08:56:14.312Z"}
+{"sessionId":"s123","startTime":"2016-07-07T08:56:14.328Z","mobile":"233256583910","network":"07/07/2016","sequence":"1","input":"*710#","requestType":"session.Type","isFirstDial":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-07T08:56:14.328Z"}

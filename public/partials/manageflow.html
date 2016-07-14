@@ -1,0 +1,242 @@
+<h1 data-ng-bind="vm.appId"></h1>
+
+<div class="row" data-ng-show="vm.menuItems.length > 0">
+    <div class="col-md-2 col-md-offset-1">
+        <button class="btn btn-sm btn-danger btn-block" data-ng-click="vm.clearAll()">Clear All</button>
+    </div>
+</div>
+
+<div class="row" data-ng-show="vm.menuItems.length == 0">
+    <div class="col-md-offset-1 col-md-4">
+        <div class="alert alert-info">
+             No menu items created yet.
+                <button class="btn btn-sm btn-primary btn-block" data-ng-click="vm.addMenuItem()">Click to Add Menu</button>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-offset-1 col-md-11">
+    <div class="dd" id="nestable3">
+        <ol class="dd-list" id="menu-flow">
+
+
+        </ol>
+    </div>
+    </div>
+</div>
+
+        <p>
+<div class="row">
+    <div class="col-md-offset-1 col-md-2">
+        <p>
+            <button class="btn btn-sm btn-success btn-block" data-ng-click="vm.saveMenus()">Save</button>
+
+        </p>
+    </div>
+</div>
+        </p>
+
+<div id="newMenuItemModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-md">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" data-ng-bind="vm.modalHeader">Add Ussd Menu</h4>
+            </div>
+            <div class="modal-body">
+                <form novalidate class="form-horizontal" data-ng-submit="vm.submitMenuItem()">
+
+                    <div class="form-group">
+                        <div class="col-md-9 col-md-offset-3">
+                            <div>
+                                <label class="checkbox-inline">
+                                    <input name="displayType" type="radio" ng-model="vm.menuItem.displayType" value="display-text"> Display Text
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input name="displayType" type="radio" ng-model="vm.menuItem.displayType" value="display-list"> Display List
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-show="vm.menuItem.displayType==='display-text'">
+                        <label   class="col-sm-3 control-label">Display Text</label>
+                        <div class="col-sm-9">
+                            <input  type="text" class="form-control" data-ng-model="vm.menuItem.displayText" id="displayText" name="displayText" placeholder="Display Text">
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-show="vm.menuItem.displayType==='display-list'">
+                        <label   class="col-sm-3 control-label">Display List</label>
+                        <div class="col-sm-9">
+                            <textarea style="resize: vertical;height: 200px" class="form-control" data-ng-model="vm.menuItem.displayText" name="displayList" placeholder="Enter List Items in format : 1. Item Text">
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label   class="col-sm-3 control-label">Header Text</label>
+                        <div class="col-sm-9">
+                            <input required type="text" class="form-control" data-ng-model="vm.menuItem.headerText" id="headerText" name="headerText" placeholder="Header Text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label   class="col-sm-3 control-label">Footer Text</label>
+                        <div class="col-sm-9">
+                            <input required type="text" class="form-control" data-ng-model="vm.menuItem.footerText" id="footerText" name="footerText" placeholder="Footer Text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label   class="col-sm-3 control-label">Return Value</label>
+                        <div class="col-sm-9">
+                            <input type="number" required class="form-control" data-ng-model="vm.menuItem.returnValue" id="returnValue" name="returnValue" placeholder="Value Mapping">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label   class="col-sm-3 control-label">Variable Holder</label>
+                        <div class="col-sm-9">
+                            <input type="text" required class="form-control"  data-ng-model="vm.menuItem.inputHolder" id="inputHolder" name="inputHolder" placeholder="Variable to hold this value">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-link" data-ng-click="vm.toggleAdvanceOptions()">Toggle Advance Options</button>
+                    <div id="advancedOptions" style="display:none">
+                        <div class="form-group">
+                            <label   class="col-sm-3 control-label">Perform  Action</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" data-ng-model="vm.menuItem.actionId" id="actionId" name="actionId" placeholder="Perform  Action">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label   class="col-sm-3 control-label"></label>
+                            <div class="col-sm-9">
+
+                                <label><input type="checkbox" id="terminateOnActionFail" data-ng-model="vm.menuItem.terminateOnActionFail" name="terminateOnActionFail" >  Terminate If Action Fails</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"></label>
+                            <div class="col-sm-9">
+                                <label><input type="checkbox" data-ng-model="vm.menuItem.forceTerminate" id="forceTerminate" name="forceTerminate" > Terminate Flow</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label   class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9">
+                            <input type="submit" class="btn btn-primary btn-md"  value="Submit"  >
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /**
+ * Nestable
+ */
+    .dd { position: relative; display: block; margin: 0; padding: 0; max-width: 750px; list-style: none; font-size: 13px; line-height: 20px; }
+    .dd-list { display: block; position: relative; margin: 0; padding: 0; list-style: none; }
+    .dd-list .dd-list { padding-left: 30px; }
+    .dd-collapsed .dd-list { display: none; }
+
+    .dd-item,
+    .dd-empty,
+    .dd-placeholder { display: block; position: relative; margin: 0; padding: 0; min-height: 20px; font-size: 13px; line-height: 20px; }
+
+    .dd-handle { display: block; height: 30px; margin: 5px 0; padding: 5px 10px; color: #333; text-decoration: none; font-weight: bold; border: 1px solid #ccc;
+        background: #fafafa;
+        background: -webkit-linear-gradient(top, #fafafa 0%, #eee 100%);
+        background:    -moz-linear-gradient(top, #fafafa 0%, #eee 100%);
+        background:         linear-gradient(top, #fafafa 0%, #eee 100%);
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        box-sizing: border-box; -moz-box-sizing: border-box;
+    }
+    /*.dd-handle:hover { color: #2ea8e5; background: #fff; }*/
+
+    .dd-item > button { display: block; position: relative; cursor: pointer; float: left; width: 25px; height: 20px; margin: 5px 0; padding: 0; text-indent: 100%; white-space: nowrap; overflow: hidden; border: 0; background: transparent; font-size: 12px; line-height: 1; text-align: center; font-weight: bold; }
+    .dd-item > button:before { content: '+'; display: block; position: absolute; width: 100%; text-align: center; text-indent: 0; }
+    .dd-item > button[data-action="collapse"]:before { content: '-'; }
+
+    .dd-placeholder,
+    .dd-empty { margin: 5px 0; padding: 0; min-height: 30px; background: #f2fbff; border: 1px dashed #b6bcbf; box-sizing: border-box; -moz-box-sizing: border-box; }
+    .dd-empty { border: 1px dashed #bbb; min-height: 100px; background-color: #e5e5e5;
+        background-image: -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
+        -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
+        background-image:    -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
+        -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
+        background-image:         linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
+        linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
+        background-size: 60px 60px;
+        background-position: 0 0, 30px 30px;
+    }
+
+    .dd-dragel { position: absolute; pointer-events: none; z-index: 9999; }
+    .dd-dragel > .dd-item .dd-handle { margin-top: 0; }
+    .dd-dragel .dd-handle {
+        -webkit-box-shadow: 2px 4px 6px 0 rgba(0,0,0,.1);
+        box-shadow: 2px 4px 6px 0 rgba(0,0,0,.1);
+    }
+
+    /**
+     * Nestable Extras
+     */
+    /*.nestable-lists { display: block; clear: both; padding: 30px 0; width: 100%; border: 0; border-top: 2px solid #ddd; border-bottom: 2px solid #ddd; }*/
+    /*#nestable-menu { padding: 0; margin: 20px 0; }*/
+    /*#nestable-output,*/
+    /*#nestable2-output { width: 100%; height: 7em; font-size: 0.75em; line-height: 1.333333em; font-family: Consolas, monospace; padding: 5px; box-sizing: border-box; -moz-box-sizing: border-box; }*/
+    #nestable2 .dd-handle {
+        color: #fff;
+        border: 1px solid #999;
+        background: #bbb;
+        background: -webkit-linear-gradient(top, #bbb 0%, #999 100%);
+        background:    -moz-linear-gradient(top, #bbb 0%, #999 100%);
+        background:         linear-gradient(top, #bbb 0%, #999 100%);
+    }
+    #nestable2 .dd-handle:hover { background: #bbb; }
+    #nestable2 .dd-item > button:before { color: #fff; }
+
+    @media only screen and (min-width: 800px) {
+
+        .dd { float: left; width: 70%; }
+        .dd + .dd { margin-left: 2%; }
+
+    }
+
+    /*.dd-hover > .dd-handle { background: #2ea8e5 !important; }*/
+
+    /**
+     * Nestable Draggable Handles
+     */
+
+    .dd3-content { display: block; height: 30px; margin: 5px 0; padding: 7px 10px 7px 40px; color: #333; text-decoration: none; font-weight: bold; border: 1px solid #ccc;
+        background: #fafafa;
+        background: -webkit-linear-gradient(top, #fafafa 0%, #eee 100%);
+        background:    -moz-linear-gradient(top, #fafafa 0%, #eee 100%);
+        background:         linear-gradient(top, #fafafa 0%, #eee 100%);
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        box-sizing: border-box; -moz-box-sizing: border-box;
+    }
+    .dd3-content > i:hover { color: #2ea8e5; background: #fff; }
+
+    .dd-dragel > .dd3-item > .dd3-content { margin: 0; }
+
+    .dd3-item > button { margin-left: 30px; }
+
+    .dd3-handle { position: absolute; margin: 0; left: 0; top: 0; cursor: pointer; width: 30px; text-indent: 100%; white-space: nowrap; overflow: hidden;
+        border: 1px solid #aaa;
+        background: #ddd;
+        background: -webkit-linear-gradient(top, #ddd 0%, #bbb 100%);
+        background:    -moz-linear-gradient(top, #ddd 0%, #bbb 100%);
+        background:         linear-gradient(top, #ddd 0%, #bbb 100%);
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .dd3-handle:before { content: '≡'; display: block; position: absolute; left: 0; top: 3px; width: 100%; text-align: center; text-indent: 0; color: #fff; font-size: 20px; font-weight: normal; }
+    .dd3-handle:hover { background: #ddd; }
+</style>
