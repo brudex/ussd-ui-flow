@@ -1,24 +1,23 @@
 var async = require('async');
+var ussd_banking_utils = require('./ussd_banking_utils');
 
 const actionName = "airtimeTopup";
 
-var network = {
-    "1":"MTN",
-    "2":"AIRTEL",
-    "3":"VODAFONE",
-    "4":"TIGO",
-    "5":"GLO"
+var valuesMap = {
+    network:{
+        "1":"MTN",
+        "2":"AIRTEL",
+        "3":"VODAFONE",
+        "4":"TIGO",
+        "5":"GLO"
+    }
 };
 
 
-function translateInputValues (inputData){
- var data = {};
-    data.network = network[inputData.network];
-    data.amount = inputData.amount;
-    data.mobile = inputData.mobile;
-}
-
-function doAirtimeTopup(transaction,topupData,resthandler,reference,callback){
+function doAirtimeTopup(transaction,topupData,params,callback){
+    var resthandler = params.resthandler;
+    var logger = params.logger;
+    var reference = params.reference;
 
     var networks = {
         "MTN":"MTN_GH",
@@ -70,71 +69,60 @@ function doAirtimeTopup(transaction,topupData,resthandler,reference,callback){
         transaction.status = result.status;
         transaction.statusMessage = result.message;
         transaction.save();
-        result.status_message= body.description;
         callback(result);
     })
-}
-
-
-function createUssdTransaction(data,user,db,reference,callback){
-    var model ={};
-    model.actionName = actionName;
-    model.moble = data.mobile;
-    model.accountNumber = user.accountNumber;
-    model.status = 'PENDING';
-    model.transactionId = reference;
-    model.inputValues = JSON.stringify(data);
-    db.UssdBankingTransactions.create(model)
-      .then(function(transaction){
-          callback(transaction);
-    })
-}
-
-
-function getUserRegistrationByMobile(db,mobile,callback){
-    db.UssdBankingUser.find({where:{mobile:mobile}})
-        .then(function(user){
-         callback(user);
-   })
 }
 
 
 function handleRequest(params,callback){
     var mobile = params.sessionData.mobile;
     var inputValues = params.inputValues;
-  async.waterfall([function(done){
-      getUserRegistrationByMobile(params.db,mobile,function(user){
-          if(user){
-              done(null,user);
-          }else{
-              var response={};
-              response.message = "You are not registered for ussd banking. Please visit the bank to register";
-              response.status = 'FAILED';
-              callback(response);
-          }
-      }) ;
+  async.waterfall([
+      function(done){
+         ussd_banking_utils.getUserRegistrationByMobile(params.db,mobile,function(user){
+              if(user){
+                  done(null,user);
+              }else{
+                  var response={};
+                  response.message = "You are not registered for ussd banking. Please visit the bank to register";
+                  response.status = 'FAILED';
+                  callback(response);
+              }
+          }) ;
       },
       function (user, done){
-          translateInputValues(inputValues,function(inputData){
+          ussd_banking_utils.translateInputValues(valuesMap,inputValues,function(inputData){
               done(null,user,inputData);
           })
       },
       function (user,inputData,done){
-          createUssdTransaction(inputData,user,params.db,params.reference,function(ussdTrans){
+          ussd_banking_utils.createUssdTransaction(inputData,user,params.db,params.reference,function(ussdTrans){
                 done(null,ussdTrans,inputData)
+          });
+      },
+      function(ussdTrans,inputData,user,done){
+          ussd_banking_utils.verifyPin(user,inputData,function(validPin){
+              if(validPin){
+                  done(null,ussdTrans,inputData,user)
+              }else{
+                  ussdTrans.status = 'FAILED';
+                  ussdTrans.statusMessage = 'Invalid User pin';
+                  var response ={};
+                  response.status = 'FAILED';
+                  response.message ='Invalid User pin';
+                  return callback(response);
+              }
           })
       },
-      function (ussdTrans,done){
-          doAirtimeTopup(ussdTrans,params.resthandler,params.reference,function(result){
+      function (ussdTrans,inputData,done){
+          doAirtimeTopup(ussdTrans,inputData,params,function(result){
                 callback(result);
-          })
+          });
       }
-
   ])
 }
 
 module.exports = {
     actionName: actionName,
     handleRequest: handleRequest
-
 };

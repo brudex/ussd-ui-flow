@@ -24,11 +24,12 @@ var doPost = function (payload,config,callback) {
 };
 
 
-var doGet = function (url,callback) {
+var doGet = function (url,config,callback) {
     var options = {
         url: url,
-        json: true,
-        method: "GET"
+        json: config.json,
+        method: "GET",
+        headers:config.headers
     };
     request(options, function(error, response, body){
         console.log(error);

@@ -11,7 +11,8 @@ var db = require("../models");
 
 fs.readdirSync(__dirname)
     .filter(function(file) {
-        return  (file.indexOf(".") !== 0) && (file !== "index.js");
+        var isActionFile = file.indexOf('action.') >= 0;
+        return isActionFile && (file.indexOf(".") !== 0) && (file !== "index.js");
     })
     .forEach(function(file) {
         console.log(file);

@@ -1,5 +1,4 @@
 {
-
   "test":{
     "username": "sa",
     "password": "p@$$word",
@@ -15,7 +14,7 @@
     "dialect": "mysql"
   },
 
-  "logins" :[
+  "logins":[
         {"username":"admin","password":"password1"}
   ]
 }
