@@ -1,6 +1,6 @@
+
 var async = require('async');
 var ussd_banking_utils = require('./ussd_banking_utils');
-
 const actionName = "bankStatement";
 
 function doBankStatementRequest(transaction,inputData,params,user,callback){
@@ -16,11 +16,14 @@ function doBankStatementRequest(transaction,inputData,params,user,callback){
 
 
 function handleRequest(params,callback){
+    console.log(params.sessionData.mobile);
+    var logger = params.logger;
     var mobile = params.sessionData.mobile;
     var inputValues = params.inputValues;
   async.waterfall([
       function(done){
-         ussd_banking_utils.getUserRegistrationByMobile(params.db,mobile,function(user){
+          logger.info('Getting Ussd Registered User >>>',mobile);
+          ussd_banking_utils.getUserRegistrationByMobile(params.db,mobile,function(user){
               if(user){
                   done(null,user);
               }else{
@@ -37,23 +40,24 @@ function handleRequest(params,callback){
           });
       },
       function (user,inputData,done){
-          ussd_banking_utils.createUssdTransaction(actionName,inputData,user,params.db,params.reference,function(ussdTrans){
-                done(null,ussdTrans,inputData,user)
-          })
+          ussd_banking_utils.createUssdTransaction(actionName,inputData,params,user,function(ussdTrans){
+              logger.info('Saved Ussed Transaction >>>>',ussdTrans.dataValues);
+              done(null,ussdTrans,inputData,user);
+          });
       },
       function(ussdTrans,inputData,user,done){
-            ussd_banking_utils.verifyPin(user,inputData,function(validPin){
-                if(validPin){
-                    done(null,ussdTrans,inputData,user)
-                }else{
-                    ussdTrans.status = 'FAILED';
-                    ussdTrans.statusMessage = 'Invalid User pin';
-                    var response ={};
-                    response.status = 'FAILED';
-                    response.message ='Invalid User pin';
-                    return callback(response);
-                }
-            })
+          ussd_banking_utils.verifyPin(user,inputData,function(validPin){
+              if(validPin){
+                  done(null,ussdTrans,inputData,user)
+              }else{
+                  ussdTrans.status = 'FAILED';
+                  ussdTrans.statusMessage = 'Invalid User pin';
+                  var response ={};
+                  response.status = 'FAILED';
+                  response.message ='Invalid User pin';
+                  return callback(response);
+              }
+          });
       },
       function (ussdTrans,inputData,user,done){
           doBankStatementRequest(ussdTrans,inputData,params,user,function(result){

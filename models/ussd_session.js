@@ -3,12 +3,12 @@ module.exports = function(sequelize, DataTypes) {
     var UssdSession = sequelize.define("UssdSession", {
         appId: DataTypes.STRING,
         sessionId: DataTypes.STRING,
-        startTime: DataTypes.DATE,
         actionId: DataTypes.STRING, // the action that was performed
         terminate: DataTypes.BOOLEAN, // this is what terminated the session
         mobile:DataTypes.STRING,
         network:DataTypes.STRING, //network operator(mtn,airtel etc)
         sequence:DataTypes.INTEGER,
+        processedAsSingle:DataTypes.BOOLEAN,
         flowId :DataTypes.STRING,
         input:DataTypes.STRING,
         inputHolder : DataTypes.STRING,

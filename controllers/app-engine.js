@@ -2,6 +2,7 @@ var async = require('async');
 var _ = require('lodash');
 var db = require('../models');
 var logger = require("../logger");
+var ussd_actions = require('../ussd-actions');
 
 function getUssdAppByShortCode(shortcode,callback){
     db.UssdApp.find({where:{shortCode:shortcode}})
@@ -11,7 +12,7 @@ function getUssdAppByShortCode(shortcode,callback){
             }else{
                 logger.error("Application not found for short code >>>"+shortcode);
                 var msg = "Invalid short code. Please check and dial again";
-                logger.error("Sending Error message >>>"+msg);
+                logger.error("Sending Error message >>>",msg);
                 callback();
             }
    });
@@ -19,9 +20,9 @@ function getUssdAppByShortCode(shortcode,callback){
 
 function getTopMenuItemsByAppId(appId,callback){
     db.UssdMenu.findAll({where:{parentFlowId:'0',appId:appId}})
-        .then(function(menuItems){
-            callback(menuItems);
-        });
+    .then(function(menuItems){
+        callback(menuItems);
+    });
 }
 
 function getPreviousSessionInput(sessionId,callback){
@@ -120,7 +121,6 @@ function getMenuItemByFlowId(flowId,appId,callback){
         .then(function(menuItem){
             callback(menuItem);
     });
-
 }
 
 
@@ -143,118 +143,139 @@ function notNumericOrGreaterThan20(input){
  * return menuList array
  * */
 function processItemAsNonListInput(currentSession,list,callback){
-
     logger.info('PROCESSING ITEM AS NON LIST INPUT >>>');
     logger.info('Current Session INPUT >>>' + currentSession.input);
     logger.info('processItemAsNonListInput Number sessions returned >>> ' + list.length);
-
     db.UssdMenu.findAll({where:{appId:currentSession.appId}}).then(function(menuItems){
         var slen=list.length;
-        logger.info('Session legth >>>',slen);
-        for(var p=0;p<slen;p++){
-            var item = list[p];
-            logger.info('SESSION ITEM INDEX IS  >>> '+ p +' ITEM INPUT >> ' + item.input + ' FLOWID IS >>' + item.flowId);
-        }
-
+        logger.info('Session length >>>',slen);
+//        for(var p=0;p<slen;p++){
+//            var item = list[p];
+//            logger.info('SESSION ITEM INDEX IS  >>> '+ p +' ITEM INPUT >> ' + item.input + ' FLOWID IS >>' + item.flowId);
+//        }
         var previousSession;
         if(slen > 1){
             logger.info('Assigning previous session >> ');
             previousSession = list[slen-2];
             logger.info('Previous session assigned as >> ',previousSession.dataValues);
         }
-        logger.info('Finding findChildMenusByFlowId >>> ',previousSession.flowId);
-        var childItems = findChildMenusByFlowId(menuItems,previousSession.flowId);
-        var currentMenuItem = childItems[0];
-        currentSession.returnValue= currentMenuItem.returnValue;
-//        currentSession.inputHolder = previousMenuItem.inputHolder;
-        currentSession.flowId = currentMenuItem.flowId;
-        logger.info('CURRENT MENUITEM FLOW ID IS >>>'+currentMenuItem.flowId);
-        logger.info('CURRENT MENUITEM DISPLAY TEXT >>>'+currentMenuItem.displayText);
-        currentSession.save();
-        logger.info('SENDING CHILD ITEM AS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>',childItems[0].displayText);
-        callback(childItems);
+        var childItems;
+        var currentMenuItem;
+        var ussdAction = null;
+        var actionMenuItem = null;
+        if(previousSession.processedAsSingle){
+            logger.info('Finding findChildMenusByFlowId ONLY ONCE>>> ',previousSession.flowId);
+            childItems = findChildMenusByFlowId(menuItems,previousSession.flowId);
+            actionMenuItem = findMenuItemByFlowId(menuItems,previousSession.flowId);
+            if(childItems.length > 0){
+                currentMenuItem = childItems[0];
+                logger.info('The current menu Item length >>> ',childItems.length);
+                currentSession.returnValue= currentMenuItem.returnValue;
+                if(actionMenuItem){
+                    currentSession.inputHolder = actionMenuItem.inputHolder;
+                }
+                currentSession.flowId = currentMenuItem.flowId;
+                currentSession.processedAsSingle = true;
+                logger.info('CURRENT MENUITEM FLOW ID IS >>>'+currentMenuItem.flowId);
+                logger.info('CURRENT MENUITEM DISPLAY TEXT >>>'+currentMenuItem.displayText);
+                currentSession.save();
+            }else{
+                if(actionMenuItem != null){
+                    logger.info('Found findMenuItemByFlowId >>>',actionMenuItem.displayText);
+                    logger.info('The previous session flowId',actionMenuItem.flowId);
+                    currentSession.inputHolder = actionMenuItem.inputHolder;
+                    currentSession.save();
+                    ussdAction = actionMenuItem;
+                    ussdAction.finalInputHolder =currentSession.inputHolder;
+                }
+            }
+        }else{
+            logger.info('Finding findChildMenusByFlowId TWO TIMES AND TWO >>> ',previousSession.flowId);
+            childItems = findChildMenusByFlowId(menuItems,previousSession.flowId);
+            actionMenuItem = findMenuItemByFlowId(menuItems,childItems[0].flowId);
+            childItems = findChildMenusByFlowId(menuItems,childItems[0].flowId);
+            if(childItems.length > 0){
+                currentMenuItem = childItems[0];
+                currentSession.returnValue= currentMenuItem.returnValue;
+                currentSession.flowId = currentMenuItem.flowId;
+                currentSession.processedAsSingle = true;
+                if(actionMenuItem){
+                    currentSession.inputHolder = actionMenuItem.inputHolder;
+                }
+                logger.info('CURRENT MENUITEM FLOW ID IS >>>'+currentMenuItem.flowId);
+                logger.info('CURRENT MENUITEM DISPLAY TEXT >>>'+currentMenuItem.displayText);
+                currentSession.save();
+            }else{
+                if(actionMenuItem != null){
+                    logger.info('Found findMenuItemByFlowId >>>',actionMenuItem.displayText);
+                    logger.info('The previous session flowId',actionMenuItem.flowId);
+                    currentSession.inputHolder = actionMenuItem.inputHolder;
+                    currentSession.save();
+                    ussdAction = actionMenuItem;
+                    ussdAction.finalInputHolder =currentSession.inputHolder;
+                }
+            }
+
+        }
+        callback(childItems,ussdAction);
     });
-
-
-
-
-
-//    db.UssdMenu.findAll({where:{appId:currentSession.appId}}).then(function(menuItems){
-//        var len=list.length;
-//        var previousSession;
-//        for(var p=0;p<len;p++){
-//            var item = list[p];
-//            logger.info('SESSION ITEM INDEX IS  >>> '+ p +' ITEM INPUT >> ' + item.input + ' FLOWID IS >>' + item.flowId);
-//        }
-//        if(len > 1){
-//            logger.info('Assigning previous session >> ');
-//            previousSession = list[len-2];
-//            logger.info('Previous session assigned as >> ',previousSession.dataValues);
-//        }
-//        if(previousSession!=null){
-//        //var previousMenuItem = findMenuItemByFlowId(menuItems,previousSession.flowId);
-//
-//            logger.info('Finding findChildMenusByFlowId >>> ',previousSession.flowId);
-//            var childItems = findChildMenusByFlowId(menuItems,previousSession.flowId);
-//            logger.info('FIRST LEVEL FOUND CHILD ITEMS IS >>>', childItems[0].displayText);
-//            childItems = findChildMenusByFlowId(menuItems,childItems[0].flowId);
-//            logger.info('SECOND LEVEL FOUND CHILD ITEMS IS >>>', childItems[0].displayText);
-//            logger.info('Child items found in processItemAsNonListInput >>>', childItems.length);
-//            if(childItems.length == 1){
-//                logger.info('RETURNING CHILD child item >>> '+childItems[0].displayText);
-//                var currentMenuItem = childItems[0];
-//                async.parallel([function(done){
-//                    currentSession.returnValue= currentMenuItem.returnValue;
-////                    currentSession.inputHolder = previousMenuItem.inputHolder;
-//                    currentSession.flowId = currentMenuItem.flowId;
-//                    currentSession.save();
-//                    done();
-//                },function(done){
-//                    callback(childItems);
-//                    done();
-//                }]);
-//            }else{
-//                var msg = 'Invalid input value. Please try again';
-//                logger.info('processItemAsNonListInput Child items found are out of range >>>',msg);
-//                callback([]);
-//            }
-//        }else{
-//            logger.info('processItemAsNonListInput Previous session is null >>>',msg);
-//            callback([]);
-//        }
-//    });
 }
 
 function executeUssdAction(menuItem,sessionList,callback){
     var actionPayload ={};
-    actionPayload.actionName =menuItem.actionName;
+    actionPayload.actionName = menuItem.actionName;
     actionPayload.sessionData = sessionList[0].dataValues;
     var inputValues = {};
+    var slen =sessionList.length;
+    if(slen >0){
+        sessionList[slen - 1].inputHolder=menuItem.finalInputHolder;
+    }
     sessionList.forEach(function(item){
        inputValues[item.inputHolder] = item.input;
     });
-    actionPayload.inputValues =inputValues;
+    actionPayload.inputValues = inputValues;
     logger.info('Final Session Data sen to action >>> ',actionPayload);
-    var result ={};
-    result.menuItems = ['You request is being processed'];
-    callback(result);
+    if(actionPayload.actionName){
+        ussd_actions.handlerRequest(actionPayload.sessionData,actionPayload.inputValues,actionPayload.actionName,function(response){
+            console.log('Ussd Returned Response from action >> ',actionPayload.actionName);
+            console.log(response);
+            var result ={};
+            result.displayMenu = [response.message];
+            result.status = response.status;
+            if(response.responseType){
+                result.responseType = response.responseType
+            }else{
+                result.responseType = 'end';
+            }
+            callback(result);
+        });
+    }else{
+        var result ={};
+        result.displayMenu = ['Invalid menu item selected. Action has not been assigned to this menu.'];
+        result.responseType = 'end';
+        callback(result);
+    }
+}
+
+function getNewEngineResponse(){
+    return {
+        sessionData : {},
+        appData :{},
+        error : false,
+        errorMessage:"",
+        response : {
+            headerText :"",
+            displayMenu : [],
+            footerText : "",
+            responseType : "list" // "list,input,end"
+        }
+    };
 }
 
 
-var engineResponse = {
-    sessionData : {},
-    appData :{},
-    error : false,
-    errorMessage:"",
-    response : {
-        headerText :"",
-        displayMenu : [],
-        footerText : "",
-        responseType : "list" // "list,input,end"
-    }
-};
 
 function processFirstDial(app,sessionData,callback){
+    var engineResponse = getNewEngineResponse();
     async.waterfall([
         function(done){
             getTopMenuItemsByAppId(app.appId,function(menuItems){
@@ -263,6 +284,7 @@ function processFirstDial(app,sessionData,callback){
             });
         },
         function(menuItems,done){
+           //save ussd session
             sessionData.appId = app.appId;
             sessionData.flowId = '0';
             db.UssdSession.create(sessionData)
@@ -272,13 +294,39 @@ function processFirstDial(app,sessionData,callback){
             });
         },
         function(menuItems,session,done){
-            if(menuItems.length > 1){ // if menu items is more we are showing a list
+            //perform intermediate action specified on ussd if available app e.g. check if user is registered
+            logger.info('App action Id is >>>',app.actionId);
+            if(app.actionId == null || app.actionId == ''){
+                done(null,menuItems,session);
+            }else{
+                var arr = [session];
+                var menuItem ={};
+                menuItem.actionName = app.actionId;
+                executeUssdAction(menuItem,arr,function(result){
+                    if(result.status == 'FAILED' || app.terminate){
+                        logger.info('Ussd intermediate action failded >>>',app.actionId);
+                        engineResponse.response.displayMenu = result.displayMenu;
+                        engineResponse.response.headerText = result.headerText;
+                        engineResponse.response.footerText = result.footerText;
+                        engineResponse.sessionData=sessionData;
+                        engineResponse.error = false;
+                        engineResponse.responseType = 'end';
+                        done(engineResponse);
+                    }else{
+                        logger.info('Ussd intermediate action passed action executed >>>',app.actionId);
+                        done(null,menuItems,session);
+                    }
+                });
+            }
+        },
+        function(menuItems,session,done){
+            if(menuItems.length > 0){ // if menu items is more we are showing a list
                 logger.info('building display Menu Items ',menuItems.length);
                 var display =  buildDisplayMenu(menuItems);
                 logger.info('Result from buildDisplayMenu >>> ',display);
                 engineResponse.response.displayMenu = display.displayMenu;
-                engineResponse.response.headerText = display.headerText;
-                engineResponse.response.footerText = display.footerText;
+                engineResponse.response.headerText = app.headerText;
+                engineResponse.response.footerText = app.footerText;
                 engineResponse.sessionData=sessionData;
                 engineResponse.error = false;
                 engineResponse.responseType = 'list';
@@ -287,10 +335,12 @@ function processFirstDial(app,sessionData,callback){
                 done(null,engineResponse);
             }else{
                 var arr = [session];
-                executeUssdAction(menuItems[0],arr,function(result){
-                    engineResponse.response.displayMenu = display.displayMenu;
-                    engineResponse.response.headerText = display.headerText;
-                    engineResponse.response.footerText = display.footerText;
+                var menuItem ={};
+                menuItem.actionName = app.actionId;
+                executeUssdAction(menuItem,arr,function(result){
+                    engineResponse.response.displayMenu = result.displayMenu;
+                    engineResponse.response.headerText = result.headerText;
+                    engineResponse.response.footerText = result.footerText;
                     engineResponse.sessionData=sessionData;
                     engineResponse.error = false;
                     engineResponse.responseType = result.responseType;
@@ -306,6 +356,7 @@ function processFirstDial(app,sessionData,callback){
 
 
 function handleRequest(requestData,callback){
+    var engineResponse = getNewEngineResponse();
     logger.info("Ussd Request >>> ", requestData);
     async.waterfall([function(done){
        if(requestData.isFirstDial){
@@ -353,12 +404,11 @@ function handleRequest(requestData,callback){
      function(currentSession,list,done){
          if(notNumericOrGreaterThan20(currentSession.input)){
              logger.info('notNumericOrGreaterThan20 >> processItemAsNonListInput ');
-                processItemAsNonListInput(currentSession,list,function(childMenuList){
+                processItemAsNonListInput(currentSession,list,function(childMenuList,ussdAction){
                     logger.info('Request processed as non-list input >>> ',childMenuList.length);
-
-                    if(childMenuList.length > 0){
-                        done(null,childMenuList,list);
-                    }else{
+                    if(ussdAction || childMenuList.length > 0){
+                        done(null,childMenuList,list,ussdAction);
+                    } else{
                         engineResponse.error = true;
                         engineResponse.errorMessage = 'Invalid option selected';
                         logger.info('Invalid menu Item selected  >>> ');
@@ -379,13 +429,14 @@ function handleRequest(requestData,callback){
                      getChildMenusByFlowId(flowId,menuItem.appId,function(childMenuList){
                          logger.info('child menu list count >>> ',childMenuList.length);
                          if(childMenuList.length > 0){
-                             done(null,childMenuList,list);
+                             done(null,childMenuList,list,null);
                          }else{
-                             processItemAsNonListInput(currentSession,list,function(childMenuList){
+                             processItemAsNonListInput(currentSession,list,function(childMenuList,ussdAction){
                                  logger.info('Request processed as non-list input >>> ',childMenuList.length);
-                                 if(childMenuList.length > 0){
-                                     done(null,childMenuList,list);
-                                 }else{
+                                 logger.info('The ussd action to execute is afer fiding childmenus by flowid  >>> ',ussdAction);
+                                 if(ussdAction || childMenuList.length > 0){
+                                     done(null,childMenuList,list,ussdAction);
+                                 } else{
                                      engineResponse.error = true;
                                      engineResponse.errorMessage = 'Invalid option selected';
                                      logger.info('Invalid menu Item selected  >>> ');
@@ -397,48 +448,70 @@ function handleRequest(requestData,callback){
                      });
                  }else{
                      logger.info('NO MATCHING MENUITEM FOUND processing as non-list input >>> '+flowId);
-                     processItemAsNonListInput(currentSession,list,function(childMenuList){
+                     processItemAsNonListInput(currentSession,list,function(childMenuList,ussdAction){
                          logger.info('Request processed as non-list input >>> ',childMenuList.length);
-                         if(childMenuList.length > 0){
-                             done(null,childMenuList,list);
-                         }else{
-                             engineResponse.error = true;
-                             engineResponse.errorMessage = 'Invalid option selected';
-                             logger.info('Invalid menu Item selected  >>> ');
-                             setSessionExpired(requestData.sessionId);
-                             return callback(engineResponse);
+                         logger.info('The ussd action to execute is >>> ',ussdAction);
+                         if(ussdAction || childMenuList.length > 0){
+                             done(null,childMenuList,list,ussdAction);
+                         } else{
+                                 engineResponse.error = true;
+                                 engineResponse.errorMessage = 'Invalid option selected';
+                                 logger.info('Invalid menu Item selected  >>> ');
+                                 setSessionExpired(requestData.sessionId);
+                                 return callback(engineResponse);
                          }
                      });
                  }
              });
          }
      },
-      function (childMenuList,sessionList,done){
-          if(childMenuList.length == 1 && (childMenuList[0].actionName != null && childMenuList[0].actionName === '')){ // if menu items is more we are showing a list
-              executeUssdAction(childMenuList[0],sessionList,function(result){
-                  engineResponse.response.displayMenu = result.displayMenu;
-                  engineResponse.response.headerText = result.headerText;
-                  engineResponse.response.footerText = result.footerText;
-                  engineResponse.sessionData = requestData;
-                  engineResponse.error = false;
-                  engineResponse.responseType = result.responseType;
-                  done(null,engineResponse);
-              });
+      function (childMenuList,sessionList,ussdAction,done){
+          if(ussdAction){
+              logger.info('Processing ussd Action  >>> ',ussdAction.actionName);
+
+              if(ussdAction.actionName != null || ussdAction.actionName !== ''){
+                  executeUssdAction(ussdAction,sessionList,function(result){
+                      sendDisplayMenu(result,function(builtResponse){
+                          done(null,builtResponse);
+                      });
+                  });
+              }else{
+                  var result ={};
+                  result.displayMenu =['There is no action attached to this ussd Menu. Invalid menu item selected'];
+                  result.error = false;
+                  result.responseType='end';
+              }
           }else{
-              var display =  buildDisplayMenu(childMenuList);
-              engineResponse.response.displayMenu = display.displayMenu;
-              engineResponse.response.headerText = display.headerText;
-              engineResponse.response.footerText = display.footerText;
-              engineResponse.sessionData = requestData;
-              engineResponse.error= false;
-              engineResponse.responseType = 'list';
-              done(null,engineResponse);
+            // if menu items is more we are showing a list
+              if(childMenuList.length == 1 && (childMenuList[0].actionName != null && childMenuList[0].actionName === '')){
+                  executeUssdAction(childMenuList[0],sessionList,function(result){
+                      sendDisplayMenu(result,function(builtResponse){
+                          done(null,builtResponse);
+                      });
+                  });
+              }else{
+                  var display =  buildDisplayMenu(childMenuList);
+                  sendDisplayMenu(display,function(builtResponse){
+                      done(null,builtResponse);
+                  });
+              }
           }
       }
     ],function(finalResponse){
         logger.info('Sending successful final response from engine >>> ',finalResponse);
         callback(engineResponse);
-    })
+    });
+
+    function sendDisplayMenu(display,callback){
+        engineResponse.response.displayMenu = display.displayMenu;
+        engineResponse.response.headerText = display.headerText;
+        engineResponse.response.footerText = display.footerText;
+        engineResponse.sessionData = requestData;
+        engineResponse.error= false;
+        engineResponse.responseType = 'list';
+        callback(engineResponse);
+    }
+
 }
 
 

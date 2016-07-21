@@ -15,16 +15,13 @@ fs.readdirSync(__dirname)
         return isActionFile && (file.indexOf(".") !== 0) && (file !== "index.js");
     })
     .forEach(function(file) {
-        console.log(file);
-        logger.info('Payment controller file >>> ',file);
         var controller = require(path.join(__dirname, file));
         controllers[controller.actionName] = controller.handleRequest;
     });
 
-console.log(controllers);
-//logger.info(controllers);
+
 function handleUssdTransaction (sessionData,inputValues,actionName, callback){
-    logger.info('Perforing Ussd Transaction Debit for user >>>', actionName);
+    logger.info('Perforing Ussd Transaction   >>>', actionName);
     logger.info('inputValues are  >>>', inputValues);
     logger.info('Session Data is  >>>', sessionData.dataValues);
     var params ={};
@@ -33,8 +30,9 @@ function handleUssdTransaction (sessionData,inputValues,actionName, callback){
     params.resthandler = utils.restHandler;
     params.reference = utils.generateTransId();
     params.db = db;
-    controllers[actionName].handleRequest(params,function(result){
-        logger.info('Debit Result >>>',result);
+    params.logger = logger;
+    controllers[actionName](params,function(result){
+        logger.info('Ussd Action Result >>>',result);
         callback(result);
     });
 }

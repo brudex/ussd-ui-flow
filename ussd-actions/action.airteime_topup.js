@@ -36,10 +36,12 @@ function doAirtimeTopup(transaction,topupData,params,callback){
         "transId": reference
     };
     var config = {
-        url : "http://172.19.50.50/vasgate/api/ExpressPay/MakePayment",
-        headers : {"API-KEY":"PUT API KEY FOR VASGATE HERE"}
+        url : ussd_banking_utils.config.vasgateUrl +'/api/ExpressPay/MakePayment',
+        headers : {"API-KEY":ussd_banking_utils.config.vasgateApiKey}
     };
+    logger.info('Doing vasgate request for airtime topup >>',payload);
     resthandler.doPost(payload,config,function(error,body){
+        var response={};
         if(error){
             logger.error('Error doing ussd transaction>>> '+actionName,error);
             var errorDescription ;
@@ -48,37 +50,47 @@ function doAirtimeTopup(transaction,topupData,params,callback){
             }else{
                 errorDescription= JSON.stringify(error);
             }
-            var response={};
-            response.message = errorDescription;
+            response.message = 'Request could not be completed at this time.\n\rPlease try again later';
             response.status = 'FAILED';
             transaction.status=response.status;
-            transaction.statusMessage = response.message;
+            transaction.statusMessage = errorDescription;
+            transaction.responseMessage = response.message;
             transaction.save();
             callback(response);
             return;
         }
         logger.info('Response from vasgate >>> ',body);
-        var result ={};
         if(body.status === '00' || body.status=='0'){
-            result.status = "SUCCESS";
+            response.status = "SUCCESS";
+            response.message = 'Request received. Your transaction is being processed.'
         }else{
-            result.status= "FAILED"
+          response.status= "FAILED";
+          response.message = 'Request could not be completed at this time.\n\rPlease try again later';
         }
-        result.message = body.message;
+       if(body.message){
+           response.message = body.message;
+       }
+        logger.info('Final result >>> ',response);
         transaction.providerReference = body.referenceNumber;
-        transaction.status = result.status;
-        transaction.statusMessage = result.message;
+        transaction.status = response.status;
+        if(response.message && response.message.length > 150){
+            response.message = response.message.substr(0,150)
+        }
+        transaction.statusMessage = response.message;
         transaction.save();
-        callback(result);
+        callback(response);
     })
 }
 
 
 function handleRequest(params,callback){
+    var logger = params.logger;
     var mobile = params.sessionData.mobile;
     var inputValues = params.inputValues;
+    logger.info('Handler request for >>>',actionName);
   async.waterfall([
       function(done){
+          logger.info('Getting Ussd Registered User >>>',mobile);
          ussd_banking_utils.getUserRegistrationByMobile(params.db,mobile,function(user){
               if(user){
                   done(null,user);
@@ -96,8 +108,9 @@ function handleRequest(params,callback){
           })
       },
       function (user,inputData,done){
-          ussd_banking_utils.createUssdTransaction(inputData,user,params.db,params.reference,function(ussdTrans){
-                done(null,ussdTrans,inputData)
+          ussd_banking_utils.createUssdTransaction(actionName,inputData,params,user,function(ussdTrans){
+              logger.info('Saved Ussed Transaction >>>>',ussdTrans.dataValues);
+                done(null,ussdTrans,inputData,user);
           });
       },
       function(ussdTrans,inputData,user,done){
@@ -114,7 +127,28 @@ function handleRequest(params,callback){
               }
           })
       },
-      function (ussdTrans,inputData,done){
+      function(ussdTrans,inputData,user,done){
+          var isNumberAmount =  ussd_banking_utils.validateAmount(inputData.amount,ussd_banking_utils.config.maxTopupAmount);
+          var response ={};
+          if(isNumberAmount){
+              if(!isNumberAmount.valid){
+                  ussdTrans.status = 'FAILED';
+                  ussdTrans.statusMessage = 'Invalid Amount Entered,'+isNumberAmount.message;
+                  response.status = 'FAILED';
+                  response.message ='Invalid Amount Entered, ' + isNumberAmount.message;
+                  return callback(response);
+              }else{
+                  done(null,ussdTrans,inputData,user);
+              }
+          }else{
+              ussdTrans.status = 'FAILED';
+              ussdTrans.statusMessage = 'Invalid Amount Entered';
+              response.status = 'FAILED';
+              response.message ='Invalid Amount Entered';
+              return callback(response);
+          }
+      },
+      function (ussdTrans,inputData,user,done){
           doAirtimeTopup(ussdTrans,inputData,params,function(result){
                 callback(result);
           });

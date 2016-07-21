@@ -1,15 +1,14 @@
 var async = require('async');
 var ussd_banking_utils = require('./ussd_banking_utils');
-
 const actionName = "transferZenith";
 
 function doFundsTransfer(transaction,inputData,params,user,callback){
     var resthandler = params.resthandler;
     var logger = params.logger;
     var reference = params.reference;
-    var payload ={
+    var payload = {
         "transferRequest": {
-            "fromAcct":user.accountNumber,
+            "fromAcct": user.accountNumber,
             "toAcct": inputData.account,
             "amt": inputData.amount,
             "description": ""
@@ -23,7 +22,7 @@ function doFundsTransfer(transaction,inputData,params,user,callback){
     };
     resthandler.doPost(payload,config,function(error,body){
         var response={};
-        logger.info('Response from xapi >>> ',body);
+        logger.info('Transfer Response from xapi >>> ',body);
         if(error){
             logger.error('Error doing ussd transaction>>> '+actionName,error);
             var errorDescription ;
@@ -43,7 +42,6 @@ function doFundsTransfer(transaction,inputData,params,user,callback){
         if(typeof  body === 'string'){
             try{
                 var json = JSON.parse(body);
-
                 if(json.transferResponse){
                     response.status ="SUCCESS";
                     response.message =json.transferResponse.message;
@@ -68,6 +66,7 @@ function doFundsTransfer(transaction,inputData,params,user,callback){
         transaction.providerReference = response.referenceNumber;
         transaction.status = response.status;
         transaction.statusMessage = response.message;
+        transaction.responseMessage = response.message;
         transaction.save();
         callback(response);
     })
@@ -75,11 +74,13 @@ function doFundsTransfer(transaction,inputData,params,user,callback){
 
 
 function handleRequest(params,callback){
+    var logger = params.logger;
     var mobile = params.sessionData.mobile;
     var inputValues = params.inputValues;
   async.waterfall([
       function(done){
-         ussd_banking_utils.getUserRegistrationByMobile(params.db,mobile,function(user){
+          logger.info('Getting Ussd Registered User >>>',mobile);
+          ussd_banking_utils.getUserRegistrationByMobile(params.db,mobile,function(user){
               if(user){
                   done(null,user);
               }else{
@@ -96,23 +97,45 @@ function handleRequest(params,callback){
           });
       },
       function (user,inputData,done){
-          ussd_banking_utils.createUssdTransaction(actionName,inputData,user,params.db,params.reference,function(ussdTrans){
-                done(null,ussdTrans,inputData,user)
-          })
+          ussd_banking_utils.createUssdTransaction(actionName,inputData,params,user,function(ussdTrans){
+              logger.info('Saved Ussed Transaction >>>>',ussdTrans.dataValues);
+              done(null,ussdTrans,inputData,user);
+          });
       },
       function(ussdTrans,inputData,user,done){
-            ussd_banking_utils.verifyPin(user,inputData,function(validPin){
-                if(validPin){
-                    done(null,ussdTrans,inputData,user)
-                }else{
-                    ussdTrans.status = 'FAILED';
-                    ussdTrans.statusMessage = 'Invalid User pin';
-                    var response ={};
-                    response.status = 'FAILED';
-                    response.message ='Invalid User pin';
-                    return callback(response);
-                }
-            })
+          ussd_banking_utils.verifyPin(user,inputData,function(validPin){
+              if(validPin){
+                  done(null,ussdTrans,inputData,user)
+              }else{
+                  ussdTrans.status = 'FAILED';
+                  ussdTrans.statusMessage = 'Invalid User pin';
+                  var response ={};
+                  response.status = 'FAILED';
+                  response.message ='Invalid User pin';
+                  return callback(response);
+              }
+          });
+      },
+      function(ussdTrans,inputData,user,done){
+          var isNumberAmount =  ussd_banking_utils.validateAmount(inputData.amount,ussd_banking_utils.config.maxTransferAmount);
+          var response ={};
+          if(isNumberAmount){
+              if(!isNumberAmount.valid){
+                  ussdTrans.status = 'FAILED';
+                  ussdTrans.statusMessage = 'Invalid Amount Entered,'+isNumberAmount.message;
+                  response.status = 'FAILED';
+                  response.message ='Invalid Amount Entered, ' + isNumberAmount.message;
+                  return callback(response);
+              }else{
+                  done(null,ussdTrans,inputData,user);
+              }
+          }else{
+              ussdTrans.status = 'FAILED';
+              ussdTrans.statusMessage = 'Invalid Amount Entered';
+              response.status = 'FAILED';
+              response.message ='Invalid Amount Entered';
+              return callback(response);
+          }
       },
       function (ussdTrans,inputData,user,done){
           doFundsTransfer(ussdTrans,inputData,params,user,function(result){

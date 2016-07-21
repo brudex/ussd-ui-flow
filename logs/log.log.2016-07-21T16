@@ -1,0 +1,79 @@
+{"level":"info","message":"Perforing Ussd Transaction   >>> airtimeTopup","timestamp":"2016-07-21T16:00:42.839Z"}
+{"network":"1","mobile":"233246583910","amount":"2","pin":"2123","level":"info","message":"inputValues are  >>>","timestamp":"2016-07-21T16:00:42.844Z"}
+{"level":"info","message":"Session Data is  >>> undefined","timestamp":"2016-07-21T16:00:42.845Z"}
+{"level":"info","message":"Handler request for >>> airtimeTopup","timestamp":"2016-07-21T16:00:42.846Z"}
+{"level":"info","message":"Getting Ussd Registered User >>> 233246583910","timestamp":"2016-07-21T16:00:42.848Z"}
+{"id":28,"actionName":"airtimeTopup","mobile":"233246583910","accountNumber":"6090111368","status":"PENDING","transactionId":"724d6af0b292c42723e26d131a09c3e0","inputValues":"{\"network\":\"MTN\",\"mobile\":\"233246583910\",\"amount\":\"2\",\"pin\":\"2123\"}","updatedAt":"2016-07-21T16:00:42.000Z","createdAt":"2016-07-21T16:00:42.000Z","level":"info","message":"Saved Ussed Transaction >>>>","timestamp":"2016-07-21T16:00:42.942Z"}
+{"serviceType":"MTN_GH","bankAccountNumber":"6090111368","serviceAccountNumber":"233246583910","amount":"2","referenceNumber":"724d6af0b292c42723e26d131a09c3e0","transId":"724d6af0b292c42723e26d131a09c3e0","level":"info","message":"Doing vasgate request for airtime topup >>","timestamp":"2016-07-21T16:00:42.944Z"}
+{"status":12,"message":"Response from vasgate >>> ","referenceNumber":null,"receiptNumber":null,"transactionId":null,"timestamp":"2016-07-21T16:00:47.936Z","balance":0,"currency":null,"level":"info"}
+{"status":"FAILED","message":"Final result >>> ","level":"info","timestamp":"2016-07-21T16:00:47.937Z"}
+{"status":"FAILED","message":"Ussd Action Result >>>","level":"info","timestamp":"2016-07-21T16:00:47.939Z"}
+{"level":"info","message":"Perforing Ussd Transaction   >>> airtimeTopup","timestamp":"2016-07-21T16:04:35.791Z"}
+{"network":"1","mobile":"233246583910","amount":"2","pin":"2123","level":"info","message":"inputValues are  >>>","timestamp":"2016-07-21T16:04:35.795Z"}
+{"level":"info","message":"Session Data is  >>> undefined","timestamp":"2016-07-21T16:04:35.795Z"}
+{"level":"info","message":"Handler request for >>> airtimeTopup","timestamp":"2016-07-21T16:04:35.800Z"}
+{"level":"info","message":"Getting Ussd Registered User >>> 233246583910","timestamp":"2016-07-21T16:04:35.801Z"}
+{"id":29,"actionName":"airtimeTopup","mobile":"233246583910","accountNumber":"6090111368","status":"PENDING","transactionId":"b1453d8ceaedd0c48cd914ad57167524","inputValues":"{\"network\":\"MTN\",\"mobile\":\"233246583910\",\"amount\":\"2\",\"pin\":\"2123\"}","updatedAt":"2016-07-21T16:04:35.000Z","createdAt":"2016-07-21T16:04:35.000Z","level":"info","message":"Saved Ussed Transaction >>>>","timestamp":"2016-07-21T16:04:35.910Z"}
+{"serviceType":"MTN_GH","bankAccountNumber":"6090111368","serviceAccountNumber":"233246583910","amount":"2","referenceNumber":"b1453d8ceaedd0c48cd914ad57167524","transId":"b1453d8ceaedd0c48cd914ad57167524","level":"info","message":"Doing vasgate request for airtime topup >>","timestamp":"2016-07-21T16:04:35.912Z"}
+{"status":12,"message":"Response from vasgate >>> ","referenceNumber":null,"receiptNumber":null,"transactionId":null,"timestamp":"2016-07-21T16:04:36.209Z","balance":0,"currency":null,"level":"info"}
+{"status":"FAILED","message":"Final result >>> ","level":"info","timestamp":"2016-07-21T16:04:36.209Z"}
+{"status":"FAILED","message":"Ussd Action Result >>>","level":"info","timestamp":"2016-07-21T16:04:36.210Z"}
+{"level":"info","message":"Perforing Ussd Transaction   >>> airtimeTopup","timestamp":"2016-07-21T16:06:51.793Z"}
+{"network":"1","mobile":"233246583910","amount":"2","pin":"2123","level":"info","message":"inputValues are  >>>","timestamp":"2016-07-21T16:06:51.797Z"}
+{"level":"info","message":"Session Data is  >>> undefined","timestamp":"2016-07-21T16:06:51.798Z"}
+{"level":"info","message":"Handler request for >>> airtimeTopup","timestamp":"2016-07-21T16:06:51.798Z"}
+{"level":"info","message":"Getting Ussd Registered User >>> 233246583910","timestamp":"2016-07-21T16:06:51.800Z"}
+{"id":30,"actionName":"airtimeTopup","mobile":"233246583910","accountNumber":"6090111368","status":"PENDING","transactionId":"b322544aa5147dc8e95a0346cc473168","inputValues":"{\"network\":\"MTN\",\"mobile\":\"233246583910\",\"amount\":\"2\",\"pin\":\"2123\"}","updatedAt":"2016-07-21T16:06:51.000Z","createdAt":"2016-07-21T16:06:51.000Z","level":"info","message":"Saved Ussed Transaction >>>>","timestamp":"2016-07-21T16:06:51.937Z"}
+{"serviceType":"MTN_GH","bankAccountNumber":"6090111368","serviceAccountNumber":"233246583910","amount":"2","referenceNumber":"b322544aa5147dc8e95a0346cc473168","transId":"b322544aa5147dc8e95a0346cc473168","level":"info","message":"Doing vasgate request for airtime topup >>","timestamp":"2016-07-21T16:06:51.939Z"}
+{"status":12,"message":"Response from vasgate >>> ","referenceNumber":null,"receiptNumber":null,"transactionId":null,"timestamp":"2016-07-21T16:06:52.226Z","balance":0,"currency":null,"level":"info"}
+{"status":"FAILED","message":"Final result >>> ","level":"info","timestamp":"2016-07-21T16:06:52.227Z"}
+{"status":"FAILED","message":"Ussd Action Result >>>","level":"info","timestamp":"2016-07-21T16:06:52.228Z"}
+{"level":"info","message":"Perforing Ussd Transaction   >>> airtimeTopup","timestamp":"2016-07-21T16:47:19.261Z"}
+{"network":"1","mobile":"233246583910","amount":"2","pin":"2123","level":"info","message":"inputValues are  >>>","timestamp":"2016-07-21T16:47:19.265Z"}
+{"level":"info","message":"Session Data is  >>> undefined","timestamp":"2016-07-21T16:47:19.266Z"}
+{"level":"info","message":"Handler request for >>> airtimeTopup","timestamp":"2016-07-21T16:47:19.266Z"}
+{"level":"info","message":"Getting Ussd Registered User >>> 233246583910","timestamp":"2016-07-21T16:47:19.268Z"}
+{"id":31,"actionName":"airtimeTopup","mobile":"233246583910","accountNumber":"6090111368","status":"PENDING","transactionId":"bdf0605b7d5bd99c4b84c6966d3a018e","inputValues":"{\"network\":\"MTN\",\"mobile\":\"233246583910\",\"amount\":\"2\",\"pin\":\"2123\"}","updatedAt":"2016-07-21T16:47:19.000Z","createdAt":"2016-07-21T16:47:19.000Z","level":"info","message":"Saved Ussed Transaction >>>>","timestamp":"2016-07-21T16:47:19.381Z"}
+{"serviceType":"MTN_GH","bankAccountNumber":"6090111368","serviceAccountNumber":"233246583910","amount":"2","referenceNumber":"bdf0605b7d5bd99c4b84c6966d3a018e","transId":"bdf0605b7d5bd99c4b84c6966d3a018e","level":"info","message":"Doing vasgate request for airtime topup >>","timestamp":"2016-07-21T16:47:19.383Z"}
+{"status":12,"message":"Response from vasgate >>> ","referenceNumber":null,"receiptNumber":null,"transactionId":null,"timestamp":"2016-07-21T16:47:19.911Z","balance":0,"currency":null,"level":"info"}
+{"status":"FAILED","message":"Final result >>> ","level":"info","timestamp":"2016-07-21T16:47:19.912Z"}
+{"status":"FAILED","message":"Ussd Action Result >>>","level":"info","timestamp":"2016-07-21T16:47:19.913Z"}
+{"level":"info","message":"Perforing Ussd Transaction   >>> airtimeTopup","timestamp":"2016-07-21T16:55:38.609Z"}
+{"network":"1","mobile":"233246583910","amount":"2","pin":"2123","level":"info","message":"inputValues are  >>>","timestamp":"2016-07-21T16:55:38.617Z"}
+{"level":"info","message":"Session Data is  >>> undefined","timestamp":"2016-07-21T16:55:38.618Z"}
+{"level":"info","message":"Handler request for >>> airtimeTopup","timestamp":"2016-07-21T16:55:38.619Z"}
+{"level":"info","message":"Getting Ussd Registered User >>> 233246583910","timestamp":"2016-07-21T16:55:38.621Z"}
+{"id":32,"actionName":"airtimeTopup","mobile":"233246583910","accountNumber":"6090111368","status":"PENDING","transactionId":"9ee375864f4a6e216dfed570746208d4","inputValues":"{\"network\":\"MTN\",\"mobile\":\"233246583910\",\"amount\":\"2\",\"pin\":\"2123\"}","updatedAt":"2016-07-21T16:55:38.000Z","createdAt":"2016-07-21T16:55:38.000Z","level":"info","message":"Saved Ussed Transaction >>>>","timestamp":"2016-07-21T16:55:38.734Z"}
+{"serviceType":"MTN_GH","bankAccountNumber":"6090111368","serviceAccountNumber":"233246583910","amount":"2","referenceNumber":"9ee375864f4a6e216dfed570746208d4","transId":"9ee375864f4a6e216dfed570746208d4","level":"info","message":"Doing vasgate request for airtime topup >>","timestamp":"2016-07-21T16:55:38.736Z"}
+{"level":"error","timestamp":"2016-07-21T16:55:38.743Z"}
+{"message":"Ussd Action Result >>>","status":"FAILED","level":"info","timestamp":"2016-07-21T16:55:38.745Z"}
+{"level":"info","message":"Perforing Ussd Transaction   >>> airtimeTopup","timestamp":"2016-07-21T16:55:46.716Z"}
+{"network":"1","mobile":"233246583910","amount":"2","pin":"2123","level":"info","message":"inputValues are  >>>","timestamp":"2016-07-21T16:55:46.719Z"}
+{"level":"info","message":"Session Data is  >>> undefined","timestamp":"2016-07-21T16:55:46.720Z"}
+{"level":"info","message":"Handler request for >>> airtimeTopup","timestamp":"2016-07-21T16:55:46.721Z"}
+{"level":"info","message":"Getting Ussd Registered User >>> 233246583910","timestamp":"2016-07-21T16:55:46.723Z"}
+{"id":33,"actionName":"airtimeTopup","mobile":"233246583910","accountNumber":"6090111368","status":"PENDING","transactionId":"13983c64505cc025c401b34a7bb8aa63","inputValues":"{\"network\":\"MTN\",\"mobile\":\"233246583910\",\"amount\":\"2\",\"pin\":\"2123\"}","updatedAt":"2016-07-21T16:55:46.000Z","createdAt":"2016-07-21T16:55:46.000Z","level":"info","message":"Saved Ussed Transaction >>>>","timestamp":"2016-07-21T16:55:46.814Z"}
+{"serviceType":"MTN_GH","bankAccountNumber":"6090111368","serviceAccountNumber":"233246583910","amount":"2","referenceNumber":"13983c64505cc025c401b34a7bb8aa63","transId":"13983c64505cc025c401b34a7bb8aa63","level":"info","message":"Doing vasgate request for airtime topup >>","timestamp":"2016-07-21T16:55:46.816Z"}
+{"level":"info","message":"Response from vasgate >>>  Missing Api Key","timestamp":"2016-07-21T16:55:48.703Z"}
+{"status":"FAILED","message":"Final result >>> ","level":"info","timestamp":"2016-07-21T16:55:48.703Z"}
+{"status":"FAILED","message":"Ussd Action Result >>>","level":"info","timestamp":"2016-07-21T16:55:48.705Z"}
+{"level":"info","message":"Perforing Ussd Transaction   >>> airtimeTopup","timestamp":"2016-07-21T16:57:10.082Z"}
+{"network":"1","mobile":"233246583910","amount":"2","pin":"2123","level":"info","message":"inputValues are  >>>","timestamp":"2016-07-21T16:57:10.086Z"}
+{"level":"info","message":"Session Data is  >>> undefined","timestamp":"2016-07-21T16:57:10.086Z"}
+{"level":"info","message":"Handler request for >>> airtimeTopup","timestamp":"2016-07-21T16:57:10.087Z"}
+{"level":"info","message":"Getting Ussd Registered User >>> 233246583910","timestamp":"2016-07-21T16:57:10.089Z"}
+{"id":34,"actionName":"airtimeTopup","mobile":"233246583910","accountNumber":"6090111368","status":"PENDING","transactionId":"6e47e5f90554815d056d466d1254eb78","inputValues":"{\"network\":\"MTN\",\"mobile\":\"233246583910\",\"amount\":\"2\",\"pin\":\"2123\"}","updatedAt":"2016-07-21T16:57:10.000Z","createdAt":"2016-07-21T16:57:10.000Z","level":"info","message":"Saved Ussed Transaction >>>>","timestamp":"2016-07-21T16:57:10.223Z"}
+{"serviceType":"MTN_GH","bankAccountNumber":"6090111368","serviceAccountNumber":"233246583910","amount":"2","referenceNumber":"6e47e5f90554815d056d466d1254eb78","transId":"6e47e5f90554815d056d466d1254eb78","level":"info","message":"Doing vasgate request for airtime topup >>","timestamp":"2016-07-21T16:57:10.225Z"}
+{"level":"info","message":"Response from vasgate >>>  UnAuthourized Client Source","timestamp":"2016-07-21T16:57:10.628Z"}
+{"status":"FAILED","message":"Final result >>> ","level":"info","timestamp":"2016-07-21T16:57:10.629Z"}
+{"status":"FAILED","message":"Ussd Action Result >>>","level":"info","timestamp":"2016-07-21T16:57:10.630Z"}
+{"level":"info","message":"Perforing Ussd Transaction   >>> airtimeTopup","timestamp":"2016-07-21T16:58:25.054Z"}
+{"network":"1","mobile":"233246583910","amount":"2","pin":"2123","level":"info","message":"inputValues are  >>>","timestamp":"2016-07-21T16:58:25.058Z"}
+{"level":"info","message":"Session Data is  >>> undefined","timestamp":"2016-07-21T16:58:25.059Z"}
+{"level":"info","message":"Handler request for >>> airtimeTopup","timestamp":"2016-07-21T16:58:25.060Z"}
+{"level":"info","message":"Getting Ussd Registered User >>> 233246583910","timestamp":"2016-07-21T16:58:25.062Z"}
+{"id":35,"actionName":"airtimeTopup","mobile":"233246583910","accountNumber":"6090111368","status":"PENDING","transactionId":"feb678603f5308c8875c53f263394f96","inputValues":"{\"network\":\"MTN\",\"mobile\":\"233246583910\",\"amount\":\"2\",\"pin\":\"2123\"}","updatedAt":"2016-07-21T16:58:25.000Z","createdAt":"2016-07-21T16:58:25.000Z","level":"info","message":"Saved Ussed Transaction >>>>","timestamp":"2016-07-21T16:58:25.258Z"}
+{"serviceType":"MTN_GH","bankAccountNumber":"6090111368","serviceAccountNumber":"233246583910","amount":"2","referenceNumber":"feb678603f5308c8875c53f263394f96","transId":"feb678603f5308c8875c53f263394f96","level":"info","message":"Doing vasgate request for airtime topup >>","timestamp":"2016-07-21T16:58:25.260Z"}
+{"status":12,"message":"Response from vasgate >>> ","referenceNumber":null,"receiptNumber":null,"transactionId":null,"timestamp":"2016-07-21T16:58:27.623Z","balance":0,"currency":null,"level":"info"}
+{"status":"FAILED","message":"Final result >>> ","level":"info","timestamp":"2016-07-21T16:58:27.624Z"}
+{"status":"FAILED","message":"Ussd Action Result >>>","level":"info","timestamp":"2016-07-21T16:58:27.625Z"}

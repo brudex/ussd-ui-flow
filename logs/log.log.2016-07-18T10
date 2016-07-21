@@ -1,0 +1,112 @@
+{"level":"info","message":"Payment controller file >>>  action.account_open.js","timestamp":"2016-07-18T10:25:53.562Z"}
+{"level":"info","message":"Payment controller file >>>  action.airteime_topup.js","timestamp":"2016-07-18T10:25:53.575Z"}
+{"level":"info","message":"Payment controller file >>>  action.atmcard_request.js","timestamp":"2016-07-18T10:25:53.578Z"}
+{"level":"info","message":"Payment controller file >>>  action.balance_enquiry.js","timestamp":"2016-07-18T10:25:53.580Z"}
+{"level":"info","message":"Payment controller file >>>  action.bank_statement.js","timestamp":"2016-07-18T10:25:53.582Z"}
+{"level":"info","message":"Payment controller file >>>  action.billpayment.js","timestamp":"2016-07-18T10:25:53.583Z"}
+{"level":"info","message":"Payment controller file >>>  action.change_pin.js","timestamp":"2016-07-18T10:25:53.587Z"}
+{"level":"info","message":"Payment controller file >>>  action.chequebook_request.js","timestamp":"2016-07-18T10:25:53.588Z"}
+{"level":"info","message":"Payment controller file >>>  action.stop_payment.js","timestamp":"2016-07-18T10:25:53.589Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_mobile.js","timestamp":"2016-07-18T10:25:53.591Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_zenith.js","timestamp":"2016-07-18T10:25:53.593Z"}
+{"level":"info","message":"Perforing Ussd Transaction Debit for user >>> airtimeTopup","timestamp":"2016-07-18T10:25:53.611Z"}
+{"network":"1","mobile":"233123123","amount":"2","pin":"1234","level":"info","message":"inputValues are  >>>","timestamp":"2016-07-18T10:25:53.611Z"}
+{"level":"info","message":"Session Data is  >>> undefined","timestamp":"2016-07-18T10:25:53.612Z"}
+{"level":"info","message":"Payment controller file >>>  action.account_open.js","timestamp":"2016-07-18T10:47:42.505Z"}
+{"level":"info","message":"Payment controller file >>>  action.airteime_topup.js","timestamp":"2016-07-18T10:47:42.519Z"}
+{"level":"info","message":"Payment controller file >>>  action.atmcard_request.js","timestamp":"2016-07-18T10:47:42.520Z"}
+{"level":"info","message":"Payment controller file >>>  action.balance_enquiry.js","timestamp":"2016-07-18T10:47:42.521Z"}
+{"level":"info","message":"Payment controller file >>>  action.bank_statement.js","timestamp":"2016-07-18T10:47:42.524Z"}
+{"level":"info","message":"Payment controller file >>>  action.billpayment.js","timestamp":"2016-07-18T10:47:42.526Z"}
+{"level":"info","message":"Payment controller file >>>  action.change_pin.js","timestamp":"2016-07-18T10:47:42.528Z"}
+{"level":"info","message":"Payment controller file >>>  action.chequebook_request.js","timestamp":"2016-07-18T10:47:42.529Z"}
+{"level":"info","message":"Payment controller file >>>  action.stop_payment.js","timestamp":"2016-07-18T10:47:42.535Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_mobile.js","timestamp":"2016-07-18T10:47:42.536Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_zenith.js","timestamp":"2016-07-18T10:47:42.538Z"}
+{"level":"info","message":"Perforing Ussd Transaction Debit for user >>> airtimeTopup","timestamp":"2016-07-18T10:47:42.560Z"}
+{"network":"1","mobile":"233123123","amount":"2","pin":"1234","level":"info","message":"inputValues are  >>>","timestamp":"2016-07-18T10:47:42.560Z"}
+{"level":"info","message":"Session Data is  >>> undefined","timestamp":"2016-07-18T10:47:42.561Z"}
+{"level":"info","message":"Handler request for >>> airtimeTopup","timestamp":"2016-07-18T10:47:42.562Z"}
+{"level":"info","message":"Getting Ussd Registered User >>> 233246583910","timestamp":"2016-07-18T10:47:42.564Z"}
+{"level":"info","message":"Payment controller file >>>  action.account_open.js","timestamp":"2016-07-18T10:48:46.539Z"}
+{"level":"info","message":"Payment controller file >>>  action.airteime_topup.js","timestamp":"2016-07-18T10:48:46.587Z"}
+{"level":"info","message":"Payment controller file >>>  action.atmcard_request.js","timestamp":"2016-07-18T10:48:46.590Z"}
+{"level":"info","message":"Payment controller file >>>  action.balance_enquiry.js","timestamp":"2016-07-18T10:48:46.591Z"}
+{"level":"info","message":"Payment controller file >>>  action.bank_statement.js","timestamp":"2016-07-18T10:48:46.594Z"}
+{"level":"info","message":"Payment controller file >>>  action.billpayment.js","timestamp":"2016-07-18T10:48:46.595Z"}
+{"level":"info","message":"Payment controller file >>>  action.change_pin.js","timestamp":"2016-07-18T10:48:46.597Z"}
+{"level":"info","message":"Payment controller file >>>  action.chequebook_request.js","timestamp":"2016-07-18T10:48:46.598Z"}
+{"level":"info","message":"Payment controller file >>>  action.stop_payment.js","timestamp":"2016-07-18T10:48:46.599Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_mobile.js","timestamp":"2016-07-18T10:48:46.602Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_zenith.js","timestamp":"2016-07-18T10:48:46.603Z"}
+{"level":"info","message":"Perforing Ussd Transaction Debit for user >>> airtimeTopup","timestamp":"2016-07-18T10:48:46.622Z"}
+{"network":"1","mobile":"233123123","amount":"2","pin":"1234","level":"info","message":"inputValues are  >>>","timestamp":"2016-07-18T10:48:46.622Z"}
+{"level":"info","message":"Session Data is  >>> undefined","timestamp":"2016-07-18T10:48:46.623Z"}
+{"level":"info","message":"Handler request for >>> airtimeTopup","timestamp":"2016-07-18T10:48:46.623Z"}
+{"level":"info","message":"Getting Ussd Registered User >>> 233246583910","timestamp":"2016-07-18T10:48:46.626Z"}
+{"level":"info","message":"Payment controller file >>>  action.account_open.js","timestamp":"2016-07-18T10:50:08.399Z"}
+{"level":"info","message":"Payment controller file >>>  action.airteime_topup.js","timestamp":"2016-07-18T10:50:08.411Z"}
+{"level":"info","message":"Payment controller file >>>  action.atmcard_request.js","timestamp":"2016-07-18T10:50:08.418Z"}
+{"level":"info","message":"Payment controller file >>>  action.balance_enquiry.js","timestamp":"2016-07-18T10:50:08.419Z"}
+{"level":"info","message":"Payment controller file >>>  action.bank_statement.js","timestamp":"2016-07-18T10:50:08.420Z"}
+{"level":"info","message":"Payment controller file >>>  action.billpayment.js","timestamp":"2016-07-18T10:50:08.422Z"}
+{"level":"info","message":"Payment controller file >>>  action.change_pin.js","timestamp":"2016-07-18T10:50:08.423Z"}
+{"level":"info","message":"Payment controller file >>>  action.chequebook_request.js","timestamp":"2016-07-18T10:50:08.424Z"}
+{"level":"info","message":"Payment controller file >>>  action.stop_payment.js","timestamp":"2016-07-18T10:50:08.426Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_mobile.js","timestamp":"2016-07-18T10:50:08.427Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_zenith.js","timestamp":"2016-07-18T10:50:08.428Z"}
+{"level":"info","message":"Perforing Ussd Transaction Debit for user >>> airtimeTopup","timestamp":"2016-07-18T10:50:08.450Z"}
+{"network":"1","mobile":"233123123","amount":"2","pin":"1234","level":"info","message":"inputValues are  >>>","timestamp":"2016-07-18T10:50:08.450Z"}
+{"level":"info","message":"Session Data is  >>> undefined","timestamp":"2016-07-18T10:50:08.451Z"}
+{"level":"info","message":"Handler request for >>> airtimeTopup","timestamp":"2016-07-18T10:50:08.452Z"}
+{"level":"info","message":"Getting Ussd Registered User >>> 233246583910","timestamp":"2016-07-18T10:50:08.454Z"}
+{"message":"Debit Result >>>","status":"FAILED","level":"info","timestamp":"2016-07-18T10:50:08.558Z"}
+{"level":"info","message":"Payment controller file >>>  action.account_open.js","timestamp":"2016-07-18T10:51:09.548Z"}
+{"level":"info","message":"Payment controller file >>>  action.airteime_topup.js","timestamp":"2016-07-18T10:51:09.561Z"}
+{"level":"info","message":"Payment controller file >>>  action.atmcard_request.js","timestamp":"2016-07-18T10:51:09.563Z"}
+{"level":"info","message":"Payment controller file >>>  action.balance_enquiry.js","timestamp":"2016-07-18T10:51:09.567Z"}
+{"level":"info","message":"Payment controller file >>>  action.bank_statement.js","timestamp":"2016-07-18T10:51:09.568Z"}
+{"level":"info","message":"Payment controller file >>>  action.billpayment.js","timestamp":"2016-07-18T10:51:09.569Z"}
+{"level":"info","message":"Payment controller file >>>  action.change_pin.js","timestamp":"2016-07-18T10:51:09.570Z"}
+{"level":"info","message":"Payment controller file >>>  action.chequebook_request.js","timestamp":"2016-07-18T10:51:09.572Z"}
+{"level":"info","message":"Payment controller file >>>  action.stop_payment.js","timestamp":"2016-07-18T10:51:09.574Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_mobile.js","timestamp":"2016-07-18T10:51:09.575Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_zenith.js","timestamp":"2016-07-18T10:51:09.579Z"}
+{"level":"info","message":"Perforing Ussd Transaction Debit for user >>> airtimeTopup","timestamp":"2016-07-18T10:51:09.596Z"}
+{"network":"1","mobile":"233123123","amount":"2","pin":"1234","level":"info","message":"inputValues are  >>>","timestamp":"2016-07-18T10:51:09.596Z"}
+{"level":"info","message":"Session Data is  >>> undefined","timestamp":"2016-07-18T10:51:09.597Z"}
+{"level":"info","message":"Handler request for >>> airtimeTopup","timestamp":"2016-07-18T10:51:09.597Z"}
+{"level":"info","message":"Getting Ussd Registered User >>> 233246583910","timestamp":"2016-07-18T10:51:09.599Z"}
+{"message":"Debit Result >>>","status":"FAILED","level":"info","timestamp":"2016-07-18T10:51:09.703Z"}
+{"level":"info","message":"Payment controller file >>>  action.account_open.js","timestamp":"2016-07-18T10:58:19.311Z"}
+{"level":"info","message":"Payment controller file >>>  action.airteime_topup.js","timestamp":"2016-07-18T10:58:19.320Z"}
+{"level":"info","message":"Payment controller file >>>  action.atmcard_request.js","timestamp":"2016-07-18T10:58:19.322Z"}
+{"level":"info","message":"Payment controller file >>>  action.balance_enquiry.js","timestamp":"2016-07-18T10:58:19.323Z"}
+{"level":"info","message":"Payment controller file >>>  action.bank_statement.js","timestamp":"2016-07-18T10:58:19.325Z"}
+{"level":"info","message":"Payment controller file >>>  action.billpayment.js","timestamp":"2016-07-18T10:58:19.329Z"}
+{"level":"info","message":"Payment controller file >>>  action.change_pin.js","timestamp":"2016-07-18T10:58:19.331Z"}
+{"level":"info","message":"Payment controller file >>>  action.chequebook_request.js","timestamp":"2016-07-18T10:58:19.332Z"}
+{"level":"info","message":"Payment controller file >>>  action.stop_payment.js","timestamp":"2016-07-18T10:58:19.334Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_mobile.js","timestamp":"2016-07-18T10:58:19.336Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_zenith.js","timestamp":"2016-07-18T10:58:19.337Z"}
+{"level":"info","message":"Perforing Ussd Transaction Debit for user >>> airtimeTopup","timestamp":"2016-07-18T10:58:19.354Z"}
+{"network":"1","mobile":"233123123","amount":"2","pin":"1234","level":"info","message":"inputValues are  >>>","timestamp":"2016-07-18T10:58:19.354Z"}
+{"level":"info","message":"Session Data is  >>> undefined","timestamp":"2016-07-18T10:58:19.354Z"}
+{"level":"info","message":"Handler request for >>> airtimeTopup","timestamp":"2016-07-18T10:58:19.355Z"}
+{"level":"info","message":"Getting Ussd Registered User >>> 233246583910","timestamp":"2016-07-18T10:58:19.356Z"}
+{"level":"info","message":"Payment controller file >>>  action.account_open.js","timestamp":"2016-07-18T10:58:35.079Z"}
+{"level":"info","message":"Payment controller file >>>  action.airteime_topup.js","timestamp":"2016-07-18T10:58:35.098Z"}
+{"level":"info","message":"Payment controller file >>>  action.atmcard_request.js","timestamp":"2016-07-18T10:58:35.100Z"}
+{"level":"info","message":"Payment controller file >>>  action.balance_enquiry.js","timestamp":"2016-07-18T10:58:35.103Z"}
+{"level":"info","message":"Payment controller file >>>  action.bank_statement.js","timestamp":"2016-07-18T10:58:35.104Z"}
+{"level":"info","message":"Payment controller file >>>  action.billpayment.js","timestamp":"2016-07-18T10:58:35.106Z"}
+{"level":"info","message":"Payment controller file >>>  action.change_pin.js","timestamp":"2016-07-18T10:58:35.107Z"}
+{"level":"info","message":"Payment controller file >>>  action.chequebook_request.js","timestamp":"2016-07-18T10:58:35.108Z"}
+{"level":"info","message":"Payment controller file >>>  action.stop_payment.js","timestamp":"2016-07-18T10:58:35.111Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_mobile.js","timestamp":"2016-07-18T10:58:35.112Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_zenith.js","timestamp":"2016-07-18T10:58:35.114Z"}
+{"level":"info","message":"Perforing Ussd Transaction Debit for user >>> airtimeTopup","timestamp":"2016-07-18T10:58:35.138Z"}
+{"network":"1","mobile":"233123123","amount":"2","pin":"1234","level":"info","message":"inputValues are  >>>","timestamp":"2016-07-18T10:58:35.138Z"}
+{"level":"info","message":"Session Data is  >>> undefined","timestamp":"2016-07-18T10:58:35.139Z"}
+{"level":"info","message":"Handler request for >>> airtimeTopup","timestamp":"2016-07-18T10:58:35.139Z"}
+{"level":"info","message":"Getting Ussd Registered User >>> 233246583910","timestamp":"2016-07-18T10:58:35.141Z"}

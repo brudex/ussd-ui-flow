@@ -1,0 +1,245 @@
+{"level":"info","message":"Payment controller file >>>  action.account_open.js","timestamp":"2016-07-19T16:21:05.084Z"}
+{"level":"info","message":"Payment controller file >>>  action.airteime_topup.js","timestamp":"2016-07-19T16:21:05.094Z"}
+{"level":"info","message":"Payment controller file >>>  action.atmcard_request.js","timestamp":"2016-07-19T16:21:05.095Z"}
+{"level":"info","message":"Payment controller file >>>  action.balance_enquiry.js","timestamp":"2016-07-19T16:21:05.098Z"}
+{"level":"info","message":"Payment controller file >>>  action.bank_statement.js","timestamp":"2016-07-19T16:21:05.100Z"}
+{"level":"info","message":"Payment controller file >>>  action.billpayment.js","timestamp":"2016-07-19T16:21:05.101Z"}
+{"level":"info","message":"Payment controller file >>>  action.change_pin.js","timestamp":"2016-07-19T16:21:05.102Z"}
+{"level":"info","message":"Payment controller file >>>  action.chequebook_request.js","timestamp":"2016-07-19T16:21:05.104Z"}
+{"level":"info","message":"Payment controller file >>>  action.register-ussdbanking.js","timestamp":"2016-07-19T16:21:05.105Z"}
+{"level":"info","message":"Payment controller file >>>  action.stop_payment.js","timestamp":"2016-07-19T16:21:05.106Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_mobile.js","timestamp":"2016-07-19T16:21:05.107Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_zenith.js","timestamp":"2016-07-19T16:21:05.110Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-19T16:21:13.415Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:21:13.417Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"*710#","requestType":"Initiation","serviceCode":"*710#","isFirstDial":true,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-19T16:21:13.418Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-19T16:21:13.420Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:21:13.417Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"*710#","requestType":"Initiation","serviceCode":"*710#","isFirstDial":true,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-19T16:21:13.421Z"}
+{"level":"info","message":"Processing first dial ","timestamp":"2016-07-19T16:21:13.468Z"}
+{"level":"info","message":"getTopMenuItemsByAppId Menu items count  6","timestamp":"2016-07-19T16:21:14.124Z"}
+{"id":1,"sessionId":"s82567890179","startTime":"2016-07-19T16:21:13.417Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"*710#","requestType":"Initiation","expired":false,"returnValue":"0","appId":"zenith-ussd","flowId":"0","updatedAt":"2016-07-19T16:21:14.000Z","createdAt":"2016-07-19T16:21:14.000Z","level":"info","message":"Created ussd session ","timestamp":"2016-07-19T16:21:14.185Z"}
+{"level":"info","message":"building display Menu Items  6","timestamp":"2016-07-19T16:21:14.185Z"}
+{"headerText":null,"footerText":null,"displayMenu":["1. AIRTIME TOPUP","4. BILL PAYMENT","2. FUNDS TRANSFER ZENITH TO ZENITH","3. FUNDS TRANSFER ZENITH TO MOBILE","5. BALANCE ENQUIRY","6. OTHER SERVICES"],"level":"info","message":"buildDisplayMenu returns >>> ","timestamp":"2016-07-19T16:21:14.186Z"}
+{"headerText":null,"footerText":null,"displayMenu":["1. AIRTIME TOPUP","4. BILL PAYMENT","2. FUNDS TRANSFER ZENITH TO ZENITH","3. FUNDS TRANSFER ZENITH TO MOBILE","5. BALANCE ENQUIRY","6. OTHER SERVICES"],"level":"info","message":"Result from buildDisplayMenu >>> ","timestamp":"2016-07-19T16:21:14.186Z"}
+{"sessionData":{"sessionId":"s82567890179","startTime":"2016-07-19T16:21:13.417Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"*710#","requestType":"Initiation","serviceCode":"*710#","isFirstDial":true,"expired":false,"returnValue":"0","appId":"zenith-ussd","flowId":"0"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["1. AIRTIME TOPUP","4. BILL PAYMENT","2. FUNDS TRANSFER ZENITH TO ZENITH","3. FUNDS TRANSFER ZENITH TO MOBILE","5. BALANCE ENQUIRY","6. OTHER SERVICES"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"First Dial final callback response >>>> ","timestamp":"2016-07-19T16:21:14.187Z"}
+{"sessionData":{"sessionId":"s82567890179","startTime":"2016-07-19T16:21:13.417Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"*710#","requestType":"Initiation","serviceCode":"*710#","isFirstDial":true,"expired":false,"returnValue":"0","appId":"zenith-ussd","flowId":"0"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["1. AIRTIME TOPUP","4. BILL PAYMENT","2. FUNDS TRANSFER ZENITH TO ZENITH","3. FUNDS TRANSFER ZENITH TO MOBILE","5. BALANCE ENQUIRY","6. OTHER SERVICES"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"First dial processed response >>>> ","timestamp":"2016-07-19T16:21:14.187Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-19T16:21:14.187Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-19T16:21:14.188Z"}
+{"sessionData":{"sessionId":"s82567890179","startTime":"2016-07-19T16:21:13.417Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"*710#","requestType":"Initiation","serviceCode":"*710#","isFirstDial":true,"expired":false,"returnValue":"0","appId":"zenith-ussd","flowId":"0"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["1. AIRTIME TOPUP","4. BILL PAYMENT","2. FUNDS TRANSFER ZENITH TO ZENITH","3. FUNDS TRANSFER ZENITH TO MOBILE","5. BALANCE ENQUIRY","6. OTHER SERVICES"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-19T16:21:14.188Z"}
+{"Type":"Response","Message":"1. AIRTIME TOPUP\r\n4. BILL PAYMENT\r\n2. FUNDS TRANSFER ZENITH TO ZENITH\r\n3. FUNDS TRANSFER ZENITH TO MOBILE\r\n5. BALANCE ENQUIRY\r\n6. OTHER SERVICES","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-19T16:21:14.188Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-19T16:27:31.304Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:27:31.305Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"1","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-19T16:27:31.305Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-19T16:27:31.305Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:27:31.305Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"1","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-19T16:27:31.305Z"}
+{"level":"info","message":"getPreviousSessionInput count >>  2","timestamp":"2016-07-19T16:27:32.097Z"}
+{"level":"info","message":"BUILT FLOW ID VALUE  >> buildFlowFromSession 0-1","timestamp":"2016-07-19T16:27:32.099Z"}
+{"id":457,"appId":"zenith-ussd","uniqueId":"45d4cc43-b0de-e8a9-898d-fc7189dc3ed2","parentFlowId":"0","flowId":"0-1","position":null,"displayText":"AIRTIME TOPUP","headerText":null,"footerText":null,"displayType":null,"actionName":null,"returnValue":"1","inputHolder":"airtimetopup","actionId":null,"terminateOnActionFail":null,"forceTerminate":null,"terminate":null,"createdAt":"2016-07-08T18:21:35.000Z","updatedAt":"2016-07-08T18:21:35.000Z","level":"info","message":"MenuItem found for getMenuItemByFlowId >>>","timestamp":"2016-07-19T16:27:32.166Z"}
+{"level":"info","message":"Result from buildFlowFromSession >>>  0-1","timestamp":"2016-07-19T16:27:32.166Z"}
+{"level":"info","message":"child menu list count >>>  1","timestamp":"2016-07-19T16:27:32.198Z"}
+{"headerText":"Select Network","footerText":null,"displayMenu":["1. MTN\n2. AIRTEL\n3. VODAFONE\n4. TIGO\n5. GLO"],"level":"info","message":"buildDisplayMenu returns >>> ","timestamp":"2016-07-19T16:27:32.198Z"}
+{"level":"info","message":"Sending successful final response from engine >>> ","timestamp":"2016-07-19T16:27:32.198Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-19T16:27:32.198Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-19T16:27:32.199Z"}
+{"sessionData":{"sessionId":"s82567890179","startTime":"2016-07-19T16:27:31.305Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"1","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"returnValue":"1","appId":"zenith-ussd"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":"Select Network","displayMenu":["1. MTN\n2. AIRTEL\n3. VODAFONE\n4. TIGO\n5. GLO"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-19T16:27:32.200Z"}
+{"Type":"Response","Message":"Select Network\r\n1. MTN\n2. AIRTEL\n3. VODAFONE\n4. TIGO\n5. GLO","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-19T16:27:32.201Z"}
+{"level":"info","message":"Found ussd flows >>>>>  3","timestamp":"2016-07-19T16:28:19.883Z"}
+{"level":"info","message":"Found ussd flows >>>>>  38","timestamp":"2016-07-19T16:28:27.690Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-19T16:28:52.786Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:28:52.788Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"2","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-19T16:28:52.788Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-19T16:28:52.788Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:28:52.788Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"2","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-19T16:28:52.788Z"}
+{"level":"info","message":"getPreviousSessionInput count >>  2","timestamp":"2016-07-19T16:28:53.075Z"}
+{"level":"info","message":"BUILT FLOW ID VALUE  >> buildFlowFromSession 1-2","timestamp":"2016-07-19T16:28:53.075Z"}
+{"level":"info","message":"NO MATCHING MENUITEM FOUND processing as non-list input >>> 1-2","timestamp":"2016-07-19T16:28:53.098Z"}
+{"level":"info","message":"PROCESSING ITEM AS NON LIST INPUT >>>","timestamp":"2016-07-19T16:28:53.099Z"}
+{"level":"info","message":"Current Session INPUT >>>2","timestamp":"2016-07-19T16:28:53.099Z"}
+{"level":"info","message":"processItemAsNonListInput Number sessions returned >>> 2","timestamp":"2016-07-19T16:28:53.099Z"}
+{"level":"info","message":"Session legth >>> 2","timestamp":"2016-07-19T16:28:53.148Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 0 ITEM INPUT >> 1 FLOWID IS >>0-1","timestamp":"2016-07-19T16:28:53.148Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 1 ITEM INPUT >> 2 FLOWID IS >>null","timestamp":"2016-07-19T16:28:53.148Z"}
+{"level":"info","message":"Assigning previous session >> ","timestamp":"2016-07-19T16:28:53.148Z"}
+{"id":2,"appId":"zenith-ussd","sessionId":"s82567890179","startTime":"2016-07-19T16:27:31.305Z","actionId":null,"terminate":null,"mobile":"233256583910","network":"07/07/2016","sequence":3,"flowId":"0-1","input":"1","inputHolder":"airtimetopup","returnValue":"1","requestType":"Response","expired":false,"createdAt":"2016-07-19T16:27:31.000Z","updatedAt":"2016-07-19T16:27:32.000Z","level":"info","message":"Previous session assigned as >> ","timestamp":"2016-07-19T16:28:53.148Z"}
+{"level":"info","message":"Finding findChildMenusByFlowId >>>  0-1","timestamp":"2016-07-19T16:28:53.148Z"}
+{"level":"info","message":"CURRENT MENUITEM FLOW ID IS >>>0-1-1","timestamp":"2016-07-19T16:28:53.149Z"}
+{"level":"info","message":"CURRENT MENUITEM DISPLAY TEXT >>>1. MTN\n2. AIRTEL\n3. VODAFONE\n4. TIGO\n5. GLO","timestamp":"2016-07-19T16:28:53.150Z"}
+{"level":"info","message":"SENDING CHILD ITEM AS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 1. MTN\n2. AIRTEL\n3. VODAFONE\n4. TIGO\n5. GLO","timestamp":"2016-07-19T16:28:53.150Z"}
+{"level":"info","message":"Request processed as non-list input >>>  1","timestamp":"2016-07-19T16:28:53.151Z"}
+{"headerText":"Select Network","footerText":null,"displayMenu":["1. MTN\n2. AIRTEL\n3. VODAFONE\n4. TIGO\n5. GLO"],"level":"info","message":"buildDisplayMenu returns >>> ","timestamp":"2016-07-19T16:28:53.157Z"}
+{"level":"info","message":"Sending successful final response from engine >>> ","timestamp":"2016-07-19T16:28:53.157Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-19T16:28:53.158Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-19T16:28:53.158Z"}
+{"sessionData":{"sessionId":"s82567890179","startTime":"2016-07-19T16:28:52.788Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"2","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"returnValue":"2","appId":"zenith-ussd"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":"Select Network","displayMenu":["1. MTN\n2. AIRTEL\n3. VODAFONE\n4. TIGO\n5. GLO"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-19T16:28:53.158Z"}
+{"Type":"Response","Message":"Select Network\r\n1. MTN\n2. AIRTEL\n3. VODAFONE\n4. TIGO\n5. GLO","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-19T16:28:53.159Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-19T16:29:12.293Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:29:12.294Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"4","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-19T16:29:12.294Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-19T16:29:12.294Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:29:12.294Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"4","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-19T16:29:12.295Z"}
+{"level":"info","message":"getPreviousSessionInput count >>  3","timestamp":"2016-07-19T16:29:12.493Z"}
+{"level":"info","message":"BUILT FLOW ID VALUE  >> buildFlowFromSession 1-1-4","timestamp":"2016-07-19T16:29:12.493Z"}
+{"level":"info","message":"NO MATCHING MENUITEM FOUND processing as non-list input >>> 1-1-4","timestamp":"2016-07-19T16:29:12.552Z"}
+{"level":"info","message":"PROCESSING ITEM AS NON LIST INPUT >>>","timestamp":"2016-07-19T16:29:12.552Z"}
+{"level":"info","message":"Current Session INPUT >>>4","timestamp":"2016-07-19T16:29:12.552Z"}
+{"level":"info","message":"processItemAsNonListInput Number sessions returned >>> 3","timestamp":"2016-07-19T16:29:12.552Z"}
+{"level":"info","message":"Session legth >>> 3","timestamp":"2016-07-19T16:29:12.575Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 0 ITEM INPUT >> 1 FLOWID IS >>0-1","timestamp":"2016-07-19T16:29:12.576Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 1 ITEM INPUT >> 2 FLOWID IS >>0-1-1","timestamp":"2016-07-19T16:29:12.576Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 2 ITEM INPUT >> 4 FLOWID IS >>null","timestamp":"2016-07-19T16:29:12.576Z"}
+{"level":"info","message":"Assigning previous session >> ","timestamp":"2016-07-19T16:29:12.576Z"}
+{"id":3,"appId":"zenith-ussd","sessionId":"s82567890179","startTime":"2016-07-19T16:28:52.788Z","actionId":null,"terminate":null,"mobile":"233256583910","network":"07/07/2016","sequence":3,"flowId":"0-1-1","input":"2","inputHolder":null,"returnValue":"1","requestType":"Response","expired":false,"createdAt":"2016-07-19T16:28:52.000Z","updatedAt":"2016-07-19T16:28:53.000Z","level":"info","message":"Previous session assigned as >> ","timestamp":"2016-07-19T16:29:12.576Z"}
+{"level":"info","message":"Finding findChildMenusByFlowId >>>  0-1-1","timestamp":"2016-07-19T16:29:12.577Z"}
+{"level":"info","message":"CURRENT MENUITEM FLOW ID IS >>>0-1-1-2","timestamp":"2016-07-19T16:29:12.578Z"}
+{"level":"info","message":"CURRENT MENUITEM DISPLAY TEXT >>>Enter Mobile","timestamp":"2016-07-19T16:29:12.578Z"}
+{"level":"info","message":"SENDING CHILD ITEM AS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Enter Mobile","timestamp":"2016-07-19T16:29:12.578Z"}
+{"level":"info","message":"Request processed as non-list input >>>  1","timestamp":"2016-07-19T16:29:12.579Z"}
+{"headerText":null,"footerText":null,"displayMenu":["Enter Mobile"],"level":"info","message":"buildDisplayMenu returns >>> ","timestamp":"2016-07-19T16:29:12.585Z"}
+{"level":"info","message":"Sending successful final response from engine >>> ","timestamp":"2016-07-19T16:29:12.586Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-19T16:29:12.586Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-19T16:29:12.586Z"}
+{"sessionData":{"sessionId":"s82567890179","startTime":"2016-07-19T16:29:12.294Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"4","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"returnValue":"4","appId":"zenith-ussd"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["Enter Mobile"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-19T16:29:12.586Z"}
+{"Type":"Response","Message":"Enter Mobile","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-19T16:29:12.587Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-19T16:34:56.190Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:34:56.191Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"*710#","requestType":"Initiation","serviceCode":"*710#","isFirstDial":true,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-19T16:34:56.191Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-19T16:34:56.191Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:34:56.191Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"*710#","requestType":"Initiation","serviceCode":"*710#","isFirstDial":true,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-19T16:34:56.191Z"}
+{"level":"info","message":"Processing first dial ","timestamp":"2016-07-19T16:34:56.235Z"}
+{"level":"info","message":"getTopMenuItemsByAppId Menu items count  6","timestamp":"2016-07-19T16:34:56.420Z"}
+{"id":1,"sessionId":"s82567890179","startTime":"2016-07-19T16:34:56.191Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"*710#","requestType":"Initiation","expired":false,"returnValue":"0","appId":"zenith-ussd","flowId":"0","updatedAt":"2016-07-19T16:34:56.000Z","createdAt":"2016-07-19T16:34:56.000Z","level":"info","message":"Created ussd session ","timestamp":"2016-07-19T16:34:56.471Z"}
+{"level":"info","message":"building display Menu Items  6","timestamp":"2016-07-19T16:34:56.472Z"}
+{"headerText":null,"footerText":null,"displayMenu":["1. AIRTIME TOPUP","4. BILL PAYMENT","2. FUNDS TRANSFER ZENITH TO ZENITH","3. FUNDS TRANSFER ZENITH TO MOBILE","5. BALANCE ENQUIRY","6. OTHER SERVICES"],"level":"info","message":"buildDisplayMenu returns >>> ","timestamp":"2016-07-19T16:34:56.472Z"}
+{"headerText":null,"footerText":null,"displayMenu":["1. AIRTIME TOPUP","4. BILL PAYMENT","2. FUNDS TRANSFER ZENITH TO ZENITH","3. FUNDS TRANSFER ZENITH TO MOBILE","5. BALANCE ENQUIRY","6. OTHER SERVICES"],"level":"info","message":"Result from buildDisplayMenu >>> ","timestamp":"2016-07-19T16:34:56.472Z"}
+{"sessionData":{"sessionId":"s82567890179","startTime":"2016-07-19T16:34:56.191Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"*710#","requestType":"Initiation","serviceCode":"*710#","isFirstDial":true,"expired":false,"returnValue":"0","appId":"zenith-ussd","flowId":"0"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["1. AIRTIME TOPUP","4. BILL PAYMENT","2. FUNDS TRANSFER ZENITH TO ZENITH","3. FUNDS TRANSFER ZENITH TO MOBILE","5. BALANCE ENQUIRY","6. OTHER SERVICES"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"First Dial final callback response >>>> ","timestamp":"2016-07-19T16:34:56.472Z"}
+{"sessionData":{"sessionId":"s82567890179","startTime":"2016-07-19T16:34:56.191Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"*710#","requestType":"Initiation","serviceCode":"*710#","isFirstDial":true,"expired":false,"returnValue":"0","appId":"zenith-ussd","flowId":"0"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["1. AIRTIME TOPUP","4. BILL PAYMENT","2. FUNDS TRANSFER ZENITH TO ZENITH","3. FUNDS TRANSFER ZENITH TO MOBILE","5. BALANCE ENQUIRY","6. OTHER SERVICES"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"First dial processed response >>>> ","timestamp":"2016-07-19T16:34:56.473Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-19T16:34:56.473Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-19T16:34:56.473Z"}
+{"sessionData":{"sessionId":"s82567890179","startTime":"2016-07-19T16:34:56.191Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"*710#","requestType":"Initiation","serviceCode":"*710#","isFirstDial":true,"expired":false,"returnValue":"0","appId":"zenith-ussd","flowId":"0"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["1. AIRTIME TOPUP","4. BILL PAYMENT","2. FUNDS TRANSFER ZENITH TO ZENITH","3. FUNDS TRANSFER ZENITH TO MOBILE","5. BALANCE ENQUIRY","6. OTHER SERVICES"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-19T16:34:56.473Z"}
+{"Type":"Response","Message":"1. AIRTIME TOPUP\r\n4. BILL PAYMENT\r\n2. FUNDS TRANSFER ZENITH TO ZENITH\r\n3. FUNDS TRANSFER ZENITH TO MOBILE\r\n5. BALANCE ENQUIRY\r\n6. OTHER SERVICES","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-19T16:34:56.474Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-19T16:35:07.620Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:35:07.621Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"1","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-19T16:35:07.621Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-19T16:35:07.621Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:35:07.621Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"1","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-19T16:35:07.621Z"}
+{"level":"info","message":"getPreviousSessionInput count >>  2","timestamp":"2016-07-19T16:35:07.802Z"}
+{"level":"info","message":"BUILT FLOW ID VALUE  >> buildFlowFromSession 0-1","timestamp":"2016-07-19T16:35:07.802Z"}
+{"id":504,"appId":"zenith-ussd","uniqueId":"45d4cc43-b0de-e8a9-898d-fc7189dc3ed2","parentFlowId":"0","flowId":"0-1","position":null,"displayText":"AIRTIME TOPUP","headerText":null,"footerText":null,"displayType":null,"actionName":null,"returnValue":"1","inputHolder":"airtimetopup","actionId":null,"terminateOnActionFail":null,"forceTerminate":null,"terminate":null,"createdAt":"2016-07-08T18:21:35.000Z","updatedAt":"2016-07-08T18:21:35.000Z","level":"info","message":"MenuItem found for getMenuItemByFlowId >>>","timestamp":"2016-07-19T16:35:07.807Z"}
+{"level":"info","message":"Result from buildFlowFromSession >>>  0-1","timestamp":"2016-07-19T16:35:07.807Z"}
+{"level":"info","message":"child menu list count >>>  1","timestamp":"2016-07-19T16:35:07.815Z"}
+{"headerText":"Select Network","footerText":null,"displayMenu":["1. MTN\n2. AIRTEL\n3. VODAFONE\n4. TIGO\n5. GLO"],"level":"info","message":"buildDisplayMenu returns >>> ","timestamp":"2016-07-19T16:35:07.817Z"}
+{"level":"info","message":"Sending successful final response from engine >>> ","timestamp":"2016-07-19T16:35:07.817Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-19T16:35:07.817Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-19T16:35:07.817Z"}
+{"sessionData":{"sessionId":"s82567890179","startTime":"2016-07-19T16:35:07.621Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"1","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"returnValue":"1","appId":"zenith-ussd"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":"Select Network","displayMenu":["1. MTN\n2. AIRTEL\n3. VODAFONE\n4. TIGO\n5. GLO"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-19T16:35:07.817Z"}
+{"Type":"Response","Message":"Select Network\r\n1. MTN\n2. AIRTEL\n3. VODAFONE\n4. TIGO\n5. GLO","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-19T16:35:07.818Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-19T16:35:14.953Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:35:14.953Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"2","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-19T16:35:14.953Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-19T16:35:14.954Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:35:14.953Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"2","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-19T16:35:14.954Z"}
+{"level":"info","message":"getPreviousSessionInput count >>  3","timestamp":"2016-07-19T16:35:15.080Z"}
+{"level":"info","message":"BUILT FLOW ID VALUE  >> buildFlowFromSession 0-1-2","timestamp":"2016-07-19T16:35:15.081Z"}
+{"level":"info","message":"NO MATCHING MENUITEM FOUND processing as non-list input >>> 0-1-2","timestamp":"2016-07-19T16:35:15.133Z"}
+{"level":"info","message":"PROCESSING ITEM AS NON LIST INPUT >>>","timestamp":"2016-07-19T16:35:15.134Z"}
+{"level":"info","message":"Current Session INPUT >>>2","timestamp":"2016-07-19T16:35:15.134Z"}
+{"level":"info","message":"processItemAsNonListInput Number sessions returned >>> 3","timestamp":"2016-07-19T16:35:15.134Z"}
+{"level":"info","message":"Session legth >>> 3","timestamp":"2016-07-19T16:35:15.148Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 0 ITEM INPUT >> *710# FLOWID IS >>0","timestamp":"2016-07-19T16:35:15.149Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 1 ITEM INPUT >> 1 FLOWID IS >>0-1","timestamp":"2016-07-19T16:35:15.150Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 2 ITEM INPUT >> 2 FLOWID IS >>null","timestamp":"2016-07-19T16:35:15.150Z"}
+{"level":"info","message":"Assigning previous session >> ","timestamp":"2016-07-19T16:35:15.150Z"}
+{"id":2,"appId":"zenith-ussd","sessionId":"s82567890179","startTime":"2016-07-19T16:35:07.621Z","actionId":null,"terminate":null,"mobile":"233256583910","network":"07/07/2016","sequence":3,"flowId":"0-1","input":"1","inputHolder":"airtimetopup","returnValue":"1","requestType":"Response","expired":false,"createdAt":"2016-07-19T16:35:07.000Z","updatedAt":"2016-07-19T16:35:07.000Z","level":"info","message":"Previous session assigned as >> ","timestamp":"2016-07-19T16:35:15.150Z"}
+{"level":"info","message":"Finding findChildMenusByFlowId >>>  0-1","timestamp":"2016-07-19T16:35:15.151Z"}
+{"level":"info","message":"CURRENT MENUITEM FLOW ID IS >>>0-1-1","timestamp":"2016-07-19T16:35:15.151Z"}
+{"level":"info","message":"CURRENT MENUITEM DISPLAY TEXT >>>1. MTN\n2. AIRTEL\n3. VODAFONE\n4. TIGO\n5. GLO","timestamp":"2016-07-19T16:35:15.151Z"}
+{"level":"info","message":"SENDING CHILD ITEM AS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 1. MTN\n2. AIRTEL\n3. VODAFONE\n4. TIGO\n5. GLO","timestamp":"2016-07-19T16:35:15.151Z"}
+{"level":"info","message":"Request processed as non-list input >>>  1","timestamp":"2016-07-19T16:35:15.151Z"}
+{"headerText":"Select Network","footerText":null,"displayMenu":["1. MTN\n2. AIRTEL\n3. VODAFONE\n4. TIGO\n5. GLO"],"level":"info","message":"buildDisplayMenu returns >>> ","timestamp":"2016-07-19T16:35:15.154Z"}
+{"level":"info","message":"Sending successful final response from engine >>> ","timestamp":"2016-07-19T16:35:15.154Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-19T16:35:15.154Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-19T16:35:15.154Z"}
+{"sessionData":{"sessionId":"s82567890179","startTime":"2016-07-19T16:35:14.953Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"2","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"returnValue":"2","appId":"zenith-ussd"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":"Select Network","displayMenu":["1. MTN\n2. AIRTEL\n3. VODAFONE\n4. TIGO\n5. GLO"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-19T16:35:15.154Z"}
+{"Type":"Response","Message":"Select Network\r\n1. MTN\n2. AIRTEL\n3. VODAFONE\n4. TIGO\n5. GLO","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-19T16:35:15.155Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-19T16:35:21.755Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:35:21.756Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"3","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-19T16:35:21.756Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-19T16:35:21.756Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:35:21.756Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"3","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-19T16:35:21.756Z"}
+{"level":"info","message":"getPreviousSessionInput count >>  4","timestamp":"2016-07-19T16:35:21.936Z"}
+{"level":"info","message":"BUILT FLOW ID VALUE  >> buildFlowFromSession 0-1-1-3","timestamp":"2016-07-19T16:35:21.937Z"}
+{"level":"info","message":"NO MATCHING MENUITEM FOUND processing as non-list input >>> 0-1-1-3","timestamp":"2016-07-19T16:35:21.961Z"}
+{"level":"info","message":"PROCESSING ITEM AS NON LIST INPUT >>>","timestamp":"2016-07-19T16:35:21.961Z"}
+{"level":"info","message":"Current Session INPUT >>>3","timestamp":"2016-07-19T16:35:21.961Z"}
+{"level":"info","message":"processItemAsNonListInput Number sessions returned >>> 4","timestamp":"2016-07-19T16:35:21.961Z"}
+{"level":"info","message":"Session legth >>> 4","timestamp":"2016-07-19T16:35:21.976Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 0 ITEM INPUT >> *710# FLOWID IS >>0","timestamp":"2016-07-19T16:35:21.976Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 1 ITEM INPUT >> 1 FLOWID IS >>0-1","timestamp":"2016-07-19T16:35:21.977Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 2 ITEM INPUT >> 2 FLOWID IS >>0-1-1","timestamp":"2016-07-19T16:35:21.977Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 3 ITEM INPUT >> 3 FLOWID IS >>null","timestamp":"2016-07-19T16:35:21.977Z"}
+{"level":"info","message":"Assigning previous session >> ","timestamp":"2016-07-19T16:35:21.977Z"}
+{"id":3,"appId":"zenith-ussd","sessionId":"s82567890179","startTime":"2016-07-19T16:35:14.953Z","actionId":null,"terminate":null,"mobile":"233256583910","network":"07/07/2016","sequence":3,"flowId":"0-1-1","input":"2","inputHolder":null,"returnValue":"1","requestType":"Response","expired":false,"createdAt":"2016-07-19T16:35:14.000Z","updatedAt":"2016-07-19T16:35:15.000Z","level":"info","message":"Previous session assigned as >> ","timestamp":"2016-07-19T16:35:21.977Z"}
+{"level":"info","message":"Finding findChildMenusByFlowId >>>  0-1-1","timestamp":"2016-07-19T16:35:21.977Z"}
+{"level":"info","message":"CURRENT MENUITEM FLOW ID IS >>>0-1-1-2","timestamp":"2016-07-19T16:35:21.977Z"}
+{"level":"info","message":"CURRENT MENUITEM DISPLAY TEXT >>>Enter Mobile","timestamp":"2016-07-19T16:35:21.978Z"}
+{"level":"info","message":"SENDING CHILD ITEM AS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Enter Mobile","timestamp":"2016-07-19T16:35:21.978Z"}
+{"level":"info","message":"Request processed as non-list input >>>  1","timestamp":"2016-07-19T16:35:21.978Z"}
+{"headerText":null,"footerText":null,"displayMenu":["Enter Mobile"],"level":"info","message":"buildDisplayMenu returns >>> ","timestamp":"2016-07-19T16:35:21.982Z"}
+{"level":"info","message":"Sending successful final response from engine >>> ","timestamp":"2016-07-19T16:35:21.982Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-19T16:35:21.982Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-19T16:35:21.982Z"}
+{"sessionData":{"sessionId":"s82567890179","startTime":"2016-07-19T16:35:21.756Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"3","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"returnValue":"3","appId":"zenith-ussd"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["Enter Mobile"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-19T16:35:21.982Z"}
+{"Type":"Response","Message":"Enter Mobile","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-19T16:35:21.986Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-19T16:35:30.395Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:35:30.396Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"4","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-19T16:35:30.396Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-19T16:35:30.396Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:35:30.396Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"4","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-19T16:35:30.397Z"}
+{"level":"info","message":"getPreviousSessionInput count >>  5","timestamp":"2016-07-19T16:35:30.479Z"}
+{"level":"info","message":"BUILT FLOW ID VALUE  >> buildFlowFromSession 0-1-1-2-4","timestamp":"2016-07-19T16:35:30.479Z"}
+{"level":"info","message":"NO MATCHING MENUITEM FOUND processing as non-list input >>> 0-1-1-2-4","timestamp":"2016-07-19T16:35:30.515Z"}
+{"level":"info","message":"PROCESSING ITEM AS NON LIST INPUT >>>","timestamp":"2016-07-19T16:35:30.515Z"}
+{"level":"info","message":"Current Session INPUT >>>4","timestamp":"2016-07-19T16:35:30.515Z"}
+{"level":"info","message":"processItemAsNonListInput Number sessions returned >>> 5","timestamp":"2016-07-19T16:35:30.515Z"}
+{"level":"info","message":"Session legth >>> 5","timestamp":"2016-07-19T16:35:30.537Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 0 ITEM INPUT >> *710# FLOWID IS >>0","timestamp":"2016-07-19T16:35:30.537Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 1 ITEM INPUT >> 1 FLOWID IS >>0-1","timestamp":"2016-07-19T16:35:30.538Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 2 ITEM INPUT >> 2 FLOWID IS >>0-1-1","timestamp":"2016-07-19T16:35:30.538Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 3 ITEM INPUT >> 3 FLOWID IS >>0-1-1-2","timestamp":"2016-07-19T16:35:30.538Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 4 ITEM INPUT >> 4 FLOWID IS >>null","timestamp":"2016-07-19T16:35:30.538Z"}
+{"level":"info","message":"Assigning previous session >> ","timestamp":"2016-07-19T16:35:30.538Z"}
+{"id":4,"appId":"zenith-ussd","sessionId":"s82567890179","startTime":"2016-07-19T16:35:21.756Z","actionId":null,"terminate":null,"mobile":"233256583910","network":"07/07/2016","sequence":3,"flowId":"0-1-1-2","input":"3","inputHolder":null,"returnValue":"2","requestType":"Response","expired":false,"createdAt":"2016-07-19T16:35:21.000Z","updatedAt":"2016-07-19T16:35:21.000Z","level":"info","message":"Previous session assigned as >> ","timestamp":"2016-07-19T16:35:30.538Z"}
+{"level":"info","message":"Finding findChildMenusByFlowId >>>  0-1-1-2","timestamp":"2016-07-19T16:35:30.539Z"}
+{"level":"info","message":"CURRENT MENUITEM FLOW ID IS >>>0-1-1-2-3","timestamp":"2016-07-19T16:35:30.539Z"}
+{"level":"info","message":"CURRENT MENUITEM DISPLAY TEXT >>>Enter Amount","timestamp":"2016-07-19T16:35:30.539Z"}
+{"level":"info","message":"SENDING CHILD ITEM AS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Enter Amount","timestamp":"2016-07-19T16:35:30.540Z"}
+{"level":"info","message":"Request processed as non-list input >>>  1","timestamp":"2016-07-19T16:35:30.540Z"}
+{"headerText":null,"footerText":null,"displayMenu":["Enter Amount"],"level":"info","message":"buildDisplayMenu returns >>> ","timestamp":"2016-07-19T16:35:30.543Z"}
+{"level":"info","message":"Sending successful final response from engine >>> ","timestamp":"2016-07-19T16:35:30.543Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-19T16:35:30.543Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-19T16:35:30.543Z"}
+{"sessionData":{"sessionId":"s82567890179","startTime":"2016-07-19T16:35:30.396Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"4","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"returnValue":"4","appId":"zenith-ussd"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["Enter Amount"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-19T16:35:30.543Z"}
+{"Type":"Response","Message":"Enter Amount","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-19T16:35:30.544Z"}
+{"level":"info","message":"Using translator >>>  smsgh","timestamp":"2016-07-19T16:35:52.750Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:35:52.751Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"4","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"level":"info","message":"EngineLanguage >>>","timestamp":"2016-07-19T16:35:52.751Z"}
+{"level":"info","message":"Handling request to engine >>>","timestamp":"2016-07-19T16:35:52.752Z"}
+{"sessionId":"s82567890179","startTime":"2016-07-19T16:35:52.751Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"4","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"level":"info","message":"Ussd Request >>> ","timestamp":"2016-07-19T16:35:52.753Z"}
+{"level":"info","message":"getPreviousSessionInput count >>  6","timestamp":"2016-07-19T16:35:52.874Z"}
+{"level":"info","message":"BUILT FLOW ID VALUE  >> buildFlowFromSession 0-1-1-2-3-4","timestamp":"2016-07-19T16:35:52.874Z"}
+{"id":508,"appId":"zenith-ussd","uniqueId":"07533721-4501-9f81-2b12-277f1c636be8","parentFlowId":"0-1-1-2-3","flowId":"0-1-1-2-3-4","position":null,"displayText":"Enter Pin","headerText":null,"footerText":null,"displayType":"display-text","actionName":null,"returnValue":"4","inputHolder":"pin","actionId":null,"terminateOnActionFail":null,"forceTerminate":null,"terminate":null,"createdAt":"2016-07-12T15:37:22.000Z","updatedAt":"2016-07-12T15:37:22.000Z","level":"info","message":"MenuItem found for getMenuItemByFlowId >>>","timestamp":"2016-07-19T16:35:52.879Z"}
+{"level":"info","message":"Result from buildFlowFromSession >>>  0-1-1-2-3-4","timestamp":"2016-07-19T16:35:52.880Z"}
+{"level":"info","message":"child menu list count >>>  0","timestamp":"2016-07-19T16:35:52.887Z"}
+{"level":"info","message":"PROCESSING ITEM AS NON LIST INPUT >>>","timestamp":"2016-07-19T16:35:52.887Z"}
+{"level":"info","message":"Current Session INPUT >>>4","timestamp":"2016-07-19T16:35:52.887Z"}
+{"level":"info","message":"processItemAsNonListInput Number sessions returned >>> 6","timestamp":"2016-07-19T16:35:52.887Z"}
+{"level":"info","message":"Session legth >>> 6","timestamp":"2016-07-19T16:35:52.907Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 0 ITEM INPUT >> *710# FLOWID IS >>0","timestamp":"2016-07-19T16:35:52.907Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 1 ITEM INPUT >> 1 FLOWID IS >>0-1","timestamp":"2016-07-19T16:35:52.907Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 2 ITEM INPUT >> 2 FLOWID IS >>0-1-1","timestamp":"2016-07-19T16:35:52.907Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 3 ITEM INPUT >> 3 FLOWID IS >>0-1-1-2","timestamp":"2016-07-19T16:35:52.907Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 4 ITEM INPUT >> 4 FLOWID IS >>0-1-1-2-3","timestamp":"2016-07-19T16:35:52.907Z"}
+{"level":"info","message":"SESSION ITEM INDEX IS  >>> 5 ITEM INPUT >> 4 FLOWID IS >>null","timestamp":"2016-07-19T16:35:52.907Z"}
+{"level":"info","message":"Assigning previous session >> ","timestamp":"2016-07-19T16:35:52.907Z"}
+{"id":5,"appId":"zenith-ussd","sessionId":"s82567890179","startTime":"2016-07-19T16:35:30.396Z","actionId":null,"terminate":null,"mobile":"233256583910","network":"07/07/2016","sequence":3,"flowId":"0-1-1-2-3","input":"4","inputHolder":null,"returnValue":"3","requestType":"Response","expired":false,"createdAt":"2016-07-19T16:35:30.000Z","updatedAt":"2016-07-19T16:35:30.000Z","level":"info","message":"Previous session assigned as >> ","timestamp":"2016-07-19T16:35:52.908Z"}
+{"level":"info","message":"Finding findChildMenusByFlowId >>>  0-1-1-2-3","timestamp":"2016-07-19T16:35:52.908Z"}
+{"level":"info","message":"CURRENT MENUITEM FLOW ID IS >>>0-1-1-2-3-4","timestamp":"2016-07-19T16:35:52.908Z"}
+{"level":"info","message":"CURRENT MENUITEM DISPLAY TEXT >>>Enter Pin","timestamp":"2016-07-19T16:35:52.908Z"}
+{"level":"info","message":"SENDING CHILD ITEM AS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Enter Pin","timestamp":"2016-07-19T16:35:52.908Z"}
+{"level":"info","message":"Request processed as non-list input >>>  1","timestamp":"2016-07-19T16:35:52.909Z"}
+{"headerText":null,"footerText":null,"displayMenu":["Enter Pin"],"level":"info","message":"buildDisplayMenu returns >>> ","timestamp":"2016-07-19T16:35:52.910Z"}
+{"level":"info","message":"Sending successful final response from engine >>> ","timestamp":"2016-07-19T16:35:52.910Z"}
+{"level":"info","message":"Response from engine >>>","timestamp":"2016-07-19T16:35:52.910Z"}
+{"level":"info","message":"Translating out response >>>","timestamp":"2016-07-19T16:35:52.910Z"}
+{"sessionData":{"sessionId":"s82567890179","startTime":"2016-07-19T16:35:52.751Z","mobile":"233256583910","network":"07/07/2016","sequence":"3","input":"4","requestType":"Response","serviceCode":"*710#","isFirstDial":false,"expired":false,"returnValue":"4","appId":"zenith-ussd"},"appData":{},"error":false,"errorMessage":"","response":{"headerText":null,"displayMenu":["Enter Pin"],"footerText":null,"responseType":"list"},"responseType":"list","level":"info","message":"Translating out request ","timestamp":"2016-07-19T16:35:52.911Z"}
+{"Type":"Response","Message":"Enter Pin","level":"info","message":"Response Translated as >>>","timestamp":"2016-07-19T16:35:52.911Z"}

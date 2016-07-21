@@ -1,0 +1,12 @@
+{"level":"info","message":"Payment controller file >>>  action.account_open.js","timestamp":"2016-07-18T18:26:38.723Z"}
+{"level":"info","message":"Payment controller file >>>  action.airteime_topup.js","timestamp":"2016-07-18T18:26:38.733Z"}
+{"level":"info","message":"Payment controller file >>>  action.atmcard_request.js","timestamp":"2016-07-18T18:26:38.747Z"}
+{"level":"info","message":"Payment controller file >>>  action.balance_enquiry.js","timestamp":"2016-07-18T18:26:38.844Z"}
+{"level":"info","message":"Payment controller file >>>  action.bank_statement.js","timestamp":"2016-07-18T18:26:38.846Z"}
+{"level":"info","message":"Payment controller file >>>  action.billpayment.js","timestamp":"2016-07-18T18:26:38.847Z"}
+{"level":"info","message":"Payment controller file >>>  action.change_pin.js","timestamp":"2016-07-18T18:26:38.849Z"}
+{"level":"info","message":"Payment controller file >>>  action.chequebook_request.js","timestamp":"2016-07-18T18:26:38.851Z"}
+{"level":"info","message":"Payment controller file >>>  action.stop_payment.js","timestamp":"2016-07-18T18:26:38.853Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_mobile.js","timestamp":"2016-07-18T18:26:38.855Z"}
+{"level":"info","message":"Payment controller file >>>  action.transfer_zenith.js","timestamp":"2016-07-18T18:26:38.856Z"}
+{"level":"info","message":"Found ussd flows >>>>>  0","timestamp":"2016-07-18T18:28:27.698Z"}

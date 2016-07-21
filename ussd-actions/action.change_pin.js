@@ -29,11 +29,13 @@ function doPinChange(transaction,inputData,params,user,callback){
 
 
 function handleRequest(params,callback){
+    var logger = params.logger;
     var mobile = params.sessionData.mobile;
     var inputValues = params.inputValues;
   async.waterfall([
       function(done){
-         ussd_banking_utils.getUserRegistrationByMobile(params.db,mobile,function(user){
+          logger.info('Getting Ussd Registered User >>>',mobile);
+          ussd_banking_utils.getUserRegistrationByMobile(params.db,mobile,function(user){
               if(user){
                   done(null,user);
               }else{
@@ -47,14 +49,15 @@ function handleRequest(params,callback){
       function (user, done){
           ussd_banking_utils.translateInputValues({},inputValues,function(inputData){
               done(null,user,inputData);
-          });
-      },
-      function (user,inputData,done){
-          ussd_banking_utils.createUssdTransaction(actionName,inputData,user,params.db,params.reference,function(ussdTrans){
-                done(null,ussdTrans,inputData,user)
           })
       },
-      function (ussdTrans,inputData,user,done){
+      function (user,inputData,done){
+          ussd_banking_utils.createUssdTransaction(actionName,inputData,params,user,function(ussdTrans){
+              logger.info('Saved Ussed Transaction >>>>',ussdTrans.dataValues);
+              done(null,ussdTrans,inputData,user);
+          });
+      },
+       function (ussdTrans,inputData,user,done){
           doPinChange(ussdTrans,inputData,params,user,function(result){
                 callback(result);
           });

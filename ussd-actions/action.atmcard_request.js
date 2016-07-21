@@ -37,11 +37,13 @@ function doAtmCardRequest(transaction,inputData,params,callback){
 
 
 function handleRequest(params,callback){
+    var logger = params.logger;
     var mobile = params.sessionData.mobile;
     var inputValues = params.inputValues;
   async.waterfall([
       function(done){
-         ussd_banking_utils.getUserRegistrationByMobile(params.db,mobile,function(user){
+          logger.info('Getting Ussd Registered User >>>',mobile);
+          ussd_banking_utils.getUserRegistrationByMobile(params.db,mobile,function(user){
               if(user){
                   done(null,user);
               }else{
@@ -58,8 +60,9 @@ function handleRequest(params,callback){
           })
       },
       function (user,inputData,done){
-          ussd_banking_utils.createUssdTransaction(inputData,user,params.db,params.reference,function(ussdTrans){
-                done(null,ussdTrans,inputData)
+          ussd_banking_utils.createUssdTransaction(actionName,inputData,params,user,function(ussdTrans){
+              logger.info('Saved Ussed Transaction >>>>',ussdTrans.dataValues);
+              done(null,ussdTrans,inputData,user);
           });
       },
 

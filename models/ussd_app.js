@@ -4,7 +4,6 @@ module.exports = function(sequelize, DataTypes) {
         appId: DataTypes.STRING,
         description: DataTypes.STRING,
         shortCode: DataTypes.STRING,
-        listId: DataTypes.STRING,
         actionId: DataTypes.STRING,
         actionType: DataTypes.STRING,
         terminate: DataTypes.BOOLEAN,

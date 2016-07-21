@@ -17,7 +17,6 @@ var doPost = function (payload,config,callback) {
             console.log(error);
         }
         console.log("Response headers are >>> ");
-        console.log(response);
         console.log(body);
         callback(error,body);
     });
