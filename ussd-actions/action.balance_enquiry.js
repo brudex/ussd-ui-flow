@@ -8,58 +8,87 @@ function doBalanceEnquiry(transaction,inputData,params,user,callback){
     var logger = params.logger;
     var reference = params.reference;
     logger.info('Balance Enquiry reference number is >>>>',reference);
+
     var config = {
-        url : "http://172.19.1.26:9480/xapi-api-service/rest/account-balance/"+user.accountNumber,
-        headers : {"Authorization":"Basic dGlnb191c2VyOnRpZ29fUGFzcw=="},
+        url : ussd_banking_utils.config.brudexEthixServicesUrl +"/api/balance/GetAccountBalance/"+user.accountNumber,
+        headers : {"API-KEY":ussd_banking_utils.config.brudexEthixApiKey},
         json:false
     };
+
     logger.info('Xapi Balance Request options >>',config);
-    resthandler.doGet(config.url,config,function(error,body){
-        var response={};
-        logger.info('Response from xapi >>> ',body);
-        if(error){
-            logger.error('Error doing ussd transaction>>> '+actionName,error);
-            var errorDescription ;
-            if(typeof error == 'string'){
-                errorDescription= error;
-            }else{
-                errorDescription= JSON.stringify(error);
-            }
-            response.message = errorDescription;
-            response.status = 'FAILED';
-            transaction.status=response.status;
-            transaction.statusMessage = response.message;
+    async.waterfall([
+        function(done){
+            var response ={};
+            response.status ="PENDING";
+            response.message= 'You request has been received.\n\r You will receive an sms shortly.';
+            transaction.status = response.status;
+            logger.info('sending pending response >> ',response);
             transaction.save();
             callback(response);
-            return;
-        }
-        if(body != null){
-            try{
-              var  balance = '-1';
-                if(!isNaN(body.trim())){
-                      balance = body.trim();
-                    response.status ="SUCCESS";
-                    response.message ='You account balance is '+balance;
+            done();
+    },
+    function(done){
+        balanceRequest(function(response){
+            ussd_banking_utils.sendSms(response.message,user.mobile,params);
+            done();
+        })
+    }
+
+    ]);
+
+    function balanceRequest(callback){
+        resthandler.doGet(config.url,config,function(error,body){
+            var response={};
+            logger.info('Response from xapi >>> ',body);
+            if(error){
+                logger.error('Error doing ussd transaction>>> '+actionName,error);
+                var errorDescription ;
+                if(typeof error == 'string'){
+                    errorDescription= error;
                 }else{
+                    errorDescription= JSON.stringify(error);
+                }
+                response.message = 'Transaction cannot be performed at this moment please try again later';
+                response.status = 'FAILED';
+                transaction.status=response.status;
+                transaction.statusMessage = errorDescription;
+                transaction.responseMessage= response.message;
+                callback(response);
+                transaction.save();
+                return;
+            }
+            if(body != null){
+                try{
+                    var  balance = '-1';
+                    if(typeof body === 'string'){
+                        body = JSON.parse(body);
+                    }
+                    if(body.status =='00'){
+                        balance = body.balance;
+                        response.status ="SUCCESS";
+                        response.message ='You account balance is '+balance;
+                    }else{
+                        response.status ="FAILED";
+                        response.message ='Request cannot be processed at this time. Please try again later';
+                    }
+
+                }catch(ex){
                     response.status ="FAILED";
                     response.message ='Request cannot be processed at this time. Please try again later';
+                    logger.error('Balance Enquiry error >>>',ex);
                 }
-
-            }catch(ex){
+            }else{
                 response.status ="FAILED";
                 response.message ='Request cannot be processed at this time. Please try again later';
-                logger.error('Balance Enquiry error >>>',ex);
             }
-        }else{
-            response.status ="FAILED";
-            response.message ='Request cannot be processed at this time. Please try again later';
-        }
-        transaction.status = response.status;
-        transaction.statusMessage = response.message;
-        transaction.responseMessage = response.message;
-        transaction.save();
-        callback(response);
-    });
+            transaction.status = response.status;
+            transaction.statusMessage = response.message;
+            transaction.responseMessage = response.message;
+            transaction.save();
+            callback(response);
+        });
+    }
+
 }
 
 

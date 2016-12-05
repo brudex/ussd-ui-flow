@@ -13,7 +13,7 @@ function getUssdAppByShortCode(shortcode,callback){
                 logger.error("Application not found for short code >>>"+shortcode);
                 var msg = "Invalid short code. Please check and dial again";
                 logger.error("Sending Error message >>>",msg);
-                callback();
+                callback(msg);
             }
    });
 }
@@ -247,6 +247,8 @@ function executeUssdAction(menuItem,sessionList,callback){
             }else{
                 result.responseType = 'end';
             }
+            console.log('Final Response for translation >>> ');
+            console.log(result);
             callback(result);
         });
     }else{
@@ -376,6 +378,7 @@ function handleRequest(requestData,callback){
                }
            })
        }else{
+           requestData.serviceCode = '*'+requestData.serviceCode+'#';
            getUssdAppByShortCode(requestData.serviceCode,function(err,app){
                if(err){
                    engineResponse.error = true;
@@ -508,7 +511,7 @@ function handleRequest(requestData,callback){
         engineResponse.response.footerText = display.footerText;
         engineResponse.sessionData = requestData;
         engineResponse.error= false;
-        engineResponse.responseType = 'list';
+        engineResponse.responseType = display.responseType;
         callback(engineResponse);
     }
 

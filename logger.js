@@ -8,7 +8,7 @@ var logger = new(winston.Logger)({
             name:"file",
             filename: 'log.log',
             dirname: __dirname + "\\" + "logs",
-            datePattern: '.yyyy-MM-ddTHH',
+            datePattern: '.yyyy-MM-dd',
             timestamp:true,
             maxsize:100480000
         }),

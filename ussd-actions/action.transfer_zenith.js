@@ -7,69 +7,100 @@ function doFundsTransfer(transaction,inputData,params,user,callback){
     var logger = params.logger;
     var reference = params.reference;
     var payload = {
-        "transferRequest": {
-            "fromAcct": user.accountNumber,
-            "toAcct": inputData.account,
-            "amt": inputData.amount,
-            "description": ""
-        }
+        "sourceAccount": user.accountNumber,
+        "destinationAccount":inputData.account,
+        "amount": inputData.amount,
+        "transferDescription":"Ussd Funds Transfer Transaction Zenith to Zenith",
+        "reference": reference
     };
+
     logger.info('Funds Transfer payload is >>>>',payload);
     logger.info('Funds Transfer reference number is >>>>',reference);
     var config = {
-        url : "http://172.19.1.26:9480/xapi-api-service/rest/transfer",
-        headers : {"Authorization":"Basic dGlnb191c2VyOnRpZ29fUGFzcw=="}
+        url : ussd_banking_utils.config.brudexEthixServicesUrl + "/api/Transfer/TransferZenith",
+        headers :  {"API-KEY":ussd_banking_utils.config.brudexEthixApiKey}
     };
-    resthandler.doPost(payload,config,function(error,body){
-        var response={};
-        logger.info('Transfer Response from xapi >>> ',body);
-        if(error){
-            logger.error('Error doing ussd transaction>>> '+actionName,error);
-            var errorDescription ;
-            if(typeof error == 'string'){
-                errorDescription= error;
-            }else{
-                errorDescription= JSON.stringify(error);
-            }
-            response.message = errorDescription;
-            response.status = 'FAILED';
-            transaction.status=response.status;
-            transaction.statusMessage = response.message;
+    logger.info('Funds Transfer EthixServices config >>>>',config);
+    async.waterfall([
+        function(done){
+            var response ={};
+            response.status ="PENDING";
+            response.message= 'You request has been received.\n\r You will receive an sms shortly.';
+            transaction.status = response.status;
+            logger.info('sending pending response >> ',response);
             transaction.save();
             callback(response);
-            return;
+            done();
+        },
+        function(done){
+            executeRequest(function(response){
+                ussd_banking_utils.sendSms(response.message,user.mobile,params);
+                done();
+            })
         }
-        if(typeof  body === 'string'){
-            try{
-                var json = JSON.parse(body);
-                if(json.transferResponse){
+    ]);
+
+    function executeRequest(callback){
+        resthandler.doPost(payload,config,function(error,body){
+            var response={};
+            logger.info('Transfer Response from xapi >>> ',body);
+            if(error){
+                logger.error('Error doing ussd transaction>>> '+actionName,error);
+                var errorDescription ;
+                if(typeof error == 'string'){
+                    errorDescription= error;
+                }else{
+                    errorDescription= JSON.stringify(error);
+                }
+                response.message = 'Transaction cannot be performed at this moment please try again later';
+                response.status = 'FAILED';
+                transaction.status=response.status;
+                transaction.statusMessage = errorDescription;
+                transaction.responseMessage= response.message;
+                callback(response);
+                transaction.save();
+                return;
+            }
+            if(typeof  body === 'string'){
+                try{
+                    var json = JSON.parse(body);
+
+                    if(json.status =='00'){
+                        response.message ='Transfer successful.'+ json.message;
+                    }else{
+                        response.status ="FAILED";
+                        response.message ='Transfer failed. Please contact the bank for assistance.';
+                    }
+
+                }catch(ex){
+                    response.status ="FAILED";
+                    var arr= body.split('|');
+                    response.message = body;
+                    if(arr.length > 1){
+                        response.message = arr[1];
+                    }
+                    logger.error('Funds Transfer error >>>',ex);
+                }
+                response.referenceNumber= body.reference;
+            }else{
+                if(body.status === '00'){
+                    response.message ='Transfer successful.'+ body.message;
                     response.status ="SUCCESS";
-                    response.message =json.transferResponse.message;
-                    response.referenceNumber= json.transferResponse.referenceNo;
                 }else{
                     response.status ="FAILED";
+                    response.message ='Transfer failed. Please contact the bank for assistance.';
                 }
-            }catch(ex){
-                response.status ="FAILED";
-                var arr= body.split('|');
-                response.message = body;
-                if(arr.length > 1){
-                    response.message = arr[1];
-                }
-                logger.error('Funds Transfer error >>>',ex);
+                response.referenceNumber= body.reference;
             }
-        }else{
-            response.status ="SUCCESS";
-            response.message =body.transferResponse.message;
-            response.referenceNumber= body.transferResponse.referenceNo;
-        }
-        transaction.providerReference = response.referenceNumber;
-        transaction.status = response.status;
-        transaction.statusMessage = response.message;
-        transaction.responseMessage = response.message;
-        transaction.save();
-        callback(response);
-    })
+            transaction.providerReference = response.referenceNumber;
+            transaction.status = response.status;
+            transaction.statusMessage = response.message;
+            transaction.responseMessage = response.message;
+            transaction.save();
+            callback(response);
+        })
+    }
+
 }
 
 

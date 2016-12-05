@@ -38,21 +38,20 @@ function doFundsTransferToMobile(transaction,inputData,params,callback){
     resthandler.doPost(payload,config,function(error,body){
         var response={};
         if(error){
-            logger.error('Error doing ussd transaction>>> ' + actionName,error);
+            logger.error('Error doing ussd transaction>>> '+actionName,error);
             var errorDescription ;
             if(typeof error == 'string'){
                 errorDescription= error;
             }else{
                 errorDescription= JSON.stringify(error);
             }
-
-
-            response.message = errorDescription;
+            response.message = 'Transaction cannot be performed at this moment please try again later';
             response.status = 'FAILED';
             transaction.status=response.status;
-            transaction.statusMessage = response.message;
-            transaction.save();
+            transaction.statusMessage = errorDescription;
+            transaction.responseMessage= response.message;
             callback(response);
+            transaction.save();
             return;
         }
         logger.info('Response from vasgate >>> ',body);

@@ -48,13 +48,13 @@ function doBillPayment(transaction,inputData,params,callback){
             }else{
                 errorDescription= JSON.stringify(error);
             }
-            response.message = 'Request could not be completed at this time.\n\rPlease try again later';
+            response.message = 'Transaction cannot be performed at this moment please try again later';
             response.status = 'FAILED';
             transaction.status=response.status;
             transaction.statusMessage = errorDescription;
-            transaction.responseMessage = response.message;
-            transaction.save();
+            transaction.responseMessage= response.message;
             callback(response);
+            transaction.save();
             return;
         }
         logger.info('Response from vasgate >>> ',body);

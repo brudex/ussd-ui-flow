@@ -2,11 +2,13 @@
  * Created by 2016015 on 17/07/2016.
  */
 
-var config ={
+var config = {
   xapiUrl:'http://172.19.1.26:9480',
   xapiAuth:'Basic dGlnb191c2VyOnRpZ29fUGFzcw==',
-  vasgateUrl:'http://localhost:12515',//http://172.19.50.50/vasgate',
-  vasgateApiKey:'MTN:2ct80rS6OhXNxJ7P82P5Ae13YZ2BbY9Q',//'rr5Jay76K8oUCLZ8XNX72R6i0gLbMEK1lRLgX4D6v7v8h800JT0l05o2R7QT5PHU',
+  vasgateUrl:'http://172.19.50.50/vasgate',
+  brudexEthixServicesUrl:'http://localhost:12515',
+  brudexEthixApiKey:'5E1CF99BC4566F9FA5CAE17844AF1',
+  vasgateApiKey:'rr5Jay76K8oUCLZ8XNX72R6i0gLbMEK1lRLgX4D6v7v8h800JT0l05o2R7QT5PHU',
   'maxTransferAmount':500,
   'maxTopupAmount':10,
   'maxBillPaymentAmount':400
@@ -22,7 +24,6 @@ function getUserRegistrationByMobile(db,mobile,callback){
             }else{
                 callback(null);
             }
-
         })
 }
 
@@ -105,11 +106,41 @@ function verifyPin (user,inputData,callback){
     callback(false);
 }
 
+function sendSms(message,mobile,params){
+    var logger = params.logger;
+   var resthandler= params.resthandler;
+    var payload = {
+        "message": "Z-USSD: "+message,
+        "mobile": mobile,
+        "sender": "ZENITH"
+    };
+    logger.info('Send Sms Payload  is >>>>',payload);
+    var thisconfig = {
+        url : config.vasgateUrl+ "/api/Sms/SendSms",
+        headers : {"API-KEY":config.vasgateApiKey}
+    };
+    resthandler.doPost(payload,thisconfig,function(error,body){
+        var response={};
+        logger.info('Send sms response from vasgate >>> ',body);
+        if(error){
+            logger.error('Error sending sms >>> ',error);
+            return;
+        }
+        if(body.status=='00'){
+            logger.info('Sms successfully sent to mobile >> ',mobile);
+        }else{
+            logger.error('Error sending sms to mobile >>',mobile );
+        }
+
+    })
+}
+
 module.exports ={
     getUserRegistrationByMobile:getUserRegistrationByMobile,
     createUssdTransaction:createUssdTransaction,
     translateInputValues :translateInputValues,
     verifyPin :verifyPin,
     config:config,
-    validateAmount:validateAmount
+    validateAmount:validateAmount,
+    sendSms:sendSms
 };

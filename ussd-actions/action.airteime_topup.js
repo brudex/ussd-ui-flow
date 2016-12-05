@@ -40,6 +40,7 @@ function doAirtimeTopup(transaction,topupData,params,callback){
         headers : {"API-KEY":ussd_banking_utils.config.vasgateApiKey}
     };
     logger.info('Doing vasgate request for airtime topup >>',payload);
+
     resthandler.doPost(payload,config,function(error,body){
         var response={};
         if(error){
