@@ -1,5 +1,5 @@
-/**
- * Created by 2016015 on 18/07/2016.
+**
+ /* Created by 2016015 on 18/07/2016.
  */
 var ussd_actions = require('./ussd-actions');
 
